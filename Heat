@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heat & Temperature Complete Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #87CEEB, #4682B4, #2F4F4F);
+            color: #333;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(45deg, #4682B4, #87CEEB);
+            border-radius: 10px;
+            color: white;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.4rem;
+            opacity: 0.9;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #2F4F4F;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+            border-bottom: 3px solid #4682B4;
+            padding-bottom: 10px;
+        }
+        
+        h3 {
+            color: #4682B4;
+            margin: 15px 0 10px 0;
+            font-size: 1.4rem;
+        }
+        
+        p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #B0E0E6, #87CEEB);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #4682B4;
+        }
+        
+        .do-you-know {
+            background: #FFE4B5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #DEB887;
+            font-style: italic;
+        }
+        
+        .activity {
+            background: #E0FFD1;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #4CAF50;
+        }
+        
+        .table-container {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        th, td {
+            border: 1px solid #4682B4;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background: #2F4F4F;
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f0f8ff;
+        }
+        
+        .thermometer-demo {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .thermometer-item {
+            text-align: center;
+            padding: 15px;
+            border: 2px solid #4682B4;
+            border-radius: 10px;
+            background: #E6F3FF;
+            min-width: 200px;
+        }
+        
+        .transfer-modes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .mode-card {
+            background: #F5F5F5;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #4682B4;
+        }
+        
+        .video-embed {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .quiz-section {
+            background: #FFF8DC;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #DEB887;
+        }
+        
+        .options label {
+            display: block;
+            padding: 10px;
+            margin: 5px 0;
+            background: #f9f9f9;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .options label:hover {
+            background: #E6F3FF;
+        }
+        
+        .submit-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+        
+        .submit-btn:hover {
+            background: #388E3C;
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            display: none;
+        }
+        
+        .correct {
+            background: #C8E6C9;
+            color: #2E7D32;
+        }
+        
+        .incorrect {
+            background: #FFCDD2;
+            color: #C62828;
+        }
+        
+        .formula-box {
+            background: #E6F3FF;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            border: 2px solid #4682B4;
+        }
+        
+        .temperature-converter {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        
+        input, select, button {
+            padding: 10px;
+            border: 2px solid #4682B4;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        button {
+            background: #2F4F4F;
+            color: white;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #1a237e;
+        }
+        
+        .global-wind-diagram {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #E8F5E8;
+            border-radius: 10px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #2F4F4F;
+            color: white;
+            border-radius: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .thermometer-demo {
+                flex-direction: column;
+            }
+            
+            .transfer-modes {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔥 HEAT & TEMPERATURE 🌡️</h1>
+            <p class="subtitle">Complete Educational Guide - Everything You Need to Know</p>
+        </header>
+
+        <div class="section">
+            <h2>1. Hot and Cold - Temperature</h2>
+            <p>We are all familiar with the sensations of 'hot' and 'cold'. On a hot summer day, we find it uncomfortable to walk barefoot on a cemented floor, as it is too 'hot'. During winter months, we will find that very floor as being too 'cold'.</p>
+            
+            <p>We express the degree of hotness of a body through its temperature. The more is the temperature of a body, the hotter it is and vice-versa.</p>
+            
+            <div class="highlight">
+                <strong>Key Point:</strong> Temperature is an indicator of the thermal energy of a body.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>2. Heat as Energy</h2>
+            <p>We know from our daily experience, that a bottle of ice-cold milk, left on a table on a hot summer day, soon warms up. A glass tumbler, of boiling-hot milk, kept on the same table, cools down after a while. It shows that when the temperatures of a body and its surroundings are different, there is a transfer of energy between the body and its surroundings.</p>
+            
+            <div class="do-you-know">
+                <strong>Do You Know?</strong> In early days, heat was considered as a fluid (liquid) that flowed from a hotter body to a colder body. This (weightless and colourless) fluid was called the 'calorific'. This theory was shown to be incorrect by the experiments of physicists, like Davy, Count Rumford and Joule, who showed that heat is just a form of energy.
+            </div>
+            
+            <div class="activity">
+                <h3>Activity 1: Heat Can Do Work</h3>
+                <p><strong>To show that we can get other forms of energy from heat.</strong> Take a vessel half filled with water. Cover it with a light aluminium lid and heat it over a flame. We will see that the water starts boiling after a while. The lid then 'rises up', and 'falls down', again and again. Here, the steam (formed by the heated water) could raise the lid. It, therefore, does mechanical work. This shows that heat is a form of energy and it can be used to do mechanical work.</p>
+            </div>
+            
+            <div class="highlight">
+                <strong>Definitions:</strong>
+                <ol>
+                    <li>Heat is a form of energy (heat energy/thermal energy), that is transferred from one body to another, due to the existence of a temperature difference between them.</li>
+                    <li>Transfer of heat energy/thermal energy always takes place from the body at a higher temperature to that at a lower temperature.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>3. Heat and Temperature Relationship</h2>
+            <p>We often observe that when we heat a body, its temperature rises. This indicates that heat and temperature are related to each other. Heat is the energy of a body that is due to the motion of its constituents particles (molecules). Temperature, on the other hand, is just an indicator of this energy.</p>
+            
+            <p>Even a cold object possesses heat energy due to the motion of its particles (molecules). When we add, (or remove) heat (from) a body, motion of its molecules becomes faster (or slower).</p>
+        </div>
+
+        <div class="section">
+            <h2>4. Effects of Heat</h2>
+            <p>When a body is heated, various types of physical and chemical changes are observed to take place.</p>
+            
+            <h3>Physical Changes</h3>
+            <ul>
+                <li><strong>(a) Change in temperature:</strong> Addition of heat to a body (usually) raises its temperature, whereas, removal of heat, from a body (usually), lowers its temperature.</li>
+                <li><strong>(b) Change of state:</strong> Addition, or removal, of heat to, or from, a body, can also bring about a change in its state. For example, on putting a tray of water (liquid form) in the freezer compartment of a refrigerator, the water freezes to form ice. Ice, as we know, is the solid form of water. Similarly, when water is heated over a flame, it starts boiling and gets converted into steam. Steam, as we know, is the gaseous or vapour form of water.</li>
+                <li><strong>(c) Thermal expansion:</strong> Most of solids, liquids and gases, are known to expand on heating. This phenomenon is called thermal expansion. For example, the metal rim, to be put on a cart wheel, is designed to have a (slightly) smaller diameter than that of the wheel. When this rim is heated, it becomes 'red-hot', expands, and slips on to the wheel easily. When it is cooled, it contracts and grips the wheel firmly.</li>
+            </ul>
+            
+            <h3>Chemical Changes</h3>
+            <p>Many chemical changes take place only when the reactants are heated up. For example, we can prepare oxygen, in the laboratory, by heating potassium chlorate (along with manganese oxide as a catalyst) over a flame.</p>
+            
+            <div class="do-you-know">
+                <strong>Do You Know?</strong> It is interesting to note that ice and cast iron are two of the few solids that contract on heating. Cold water, at 4°C, is known to expand on cooling. This special property of water helps us to understand (i) why water pipes sometimes burst at very cold places and (ii) a soft drink glass bottle often cracks when left in the freezer compartment for a long time. It is also linked with the survival of aquatic animals even at places where the (surrounding) atmospheric temperature goes down well below 0°C.
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>5. Measurement of Temperature</h2>
+            <p>We now know that heat is a form of energy and temperature is an indicator of that energy. We often feel that we can get 'an estimate' of the temperature of a body by just touching it. However, though our senses do give us an idea of temperature, they are often unreliable and misleading. For example, if we remove an ice tray, and a packet of frozen vegetables, from the freezer compartment, the ice tray may appear colder to our hand even though both are at the same temperature.</p>
+            
+            <p>We, therefore, need a more reliable method to know the relative hotness or coldness, i.e. the temperature of a given body. We use special instruments for this purpose. All such instruments, or devices, are known as thermometers.</p>
+            
+            <div class="activity">
+                <h3>Activity 2: Importance of Accurate Temperature Measurement</h3>
+                <p>List your ideas, about the 'needs' of different persons, to know the temperature of different objects accurately. Jot down your ideas in a tabular form as shown below.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>6. The Thermometer</h2>
+            <p>We find that many of the physical properties, (like thermal expansion, pressure, volume) of different materials, change with temperature in a regular and systematic manner. We can, therefore, use these properties as a way of measuring temperature. The simplest thermometer, with which we all are familiar, is the mercury in glass thermometer. It is based on the thermal expansion of mercury.</p>
+            
+            <div class="do-you-know">
+                <strong>Do You Know?</strong> Glass Thermometer: Mercury expands in a uniform way, and also remains in its liquid state, over a wide temperature range. It also does not stick to the walls of the glass capillary tube and is a shining silvery liquid. It is because of these reasons that mercury is often used in ordinary thermometers.
+            </div>
+            
+            <div class="thermometer-demo">
+                <div class="thermometer-item">
+                    <h3>Mercury Thermometer</h3>
+                    <p>Based on thermal expansion of mercury</p>
+                    <p>Consists of glass capillary tube with bulb</p>
+                </div>
+                <div class="thermometer-item">
+                    <h3>How It Works</h3>
+                    <p>Mercury expands when heated</p>
+                    <p>Length of mercury thread indicates temperature</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>7. Temperature Scales</h2>
+            <div class="formula-box">
+                <h3>Temperature Conversion Formula</h3>
+                <p><strong>°C = (°F - 32) × 5/9</strong></p>
+                <p><strong>°F = (°C × 9/5) + 32</strong></p>
+            </div>
+            
+            <div class="temperature-converter">
+                <input type="number" id="tempInput" placeholder="Enter temperature">
+                <select id="scaleSelect">
+                    <option value="celsius">°C</option>
+                    <option value="fahrenheit">°F</option>
+                </select>
+                <button onclick="convertTemperature()">Convert</button>
+                <div id="conversionResult"></div>
+            </div>
+            
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                            <th>Celsius (°C)</th>
+                            <th>Fahrenheit (°F)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Normal room temperature</td>
+                            <td>23°C</td>
+                            <td>72°F</td>
+                        </tr>
+                        <tr>
+                            <td>Normal human body temperature</td>
+                            <td>36.9°C</td>
+                            <td>98.4°F</td>
+                        </tr>
+                        <tr>
+                            <td>Water boils at</td>
+                            <td>100°C</td>
+                            <td>212°F</td>
+                        </tr>
+                        <tr>
+                            <td>Water freezes at</td>
+                            <td>0°C</td>
+                            <td>32°F</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <p>The range of a laboratory thermometer can be from -10°C to 110°C. Thermometers, in the range 0°C to 100°C, are found more often in school laboratories.</p>
+        </div>
+
+        <div class="section">
+            <h2>8. Clinical Thermometer</h2>
+            <p>We use a specially designed, and calibrated, (mercury in glass) thermometer to measure our body temperature. Such a thermometer is known as the clinical, or doctor's, thermometer.</p>
+            
+            <p>The clinical thermometer differs from an ordinary laboratory thermometer in two respects:</p>
+            <ol>
+                <li>It is calibrated from 35°C to 42°C only. This is so because this is the range over which the temperature of the normal human body can vary.</li>
+                <li>It has a slight 'bend', or kink, in its capillary tube. This kink is given the name constriction. The constriction ensures that mercury thread does not fall back, by itself, after this thermometer has been used to measure the temperature of a person. The reading can, therefore, be taken conveniently. This would not be the case if an ordinary laboratory thermometer was used for this purpose.</li>
+            </ol>
+            
+            <div class="do-you-know">
+                <strong>Do You Know?</strong> The normal human body temperature is the average body temperature of a large number of healthy persons. It is quite close to 36.9°C (or 98.4°F). A body temperature close to 40°C (or 104°F) indicates a condition of 'high fever.
+            </div>
+            
+            <div class="activity">
+                <h3>Activity 4: Measuring Body Temperature</h3>
+                <p>Before measuring the body temperature, wash the thermometer with an antiseptic solution. Hold it firmly and give it a few jerks. The jerks will bring the level of mercury below 35°C. Now place the thermometer gently under the tongue of the person being observed. Let it remain there for about one minute. Now take out the thermometer and note its reading. While reading, keep the line of sight along the convex meniscus of the level of mercury in the thermometer. This is the body temperature of the person under observation.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>9. Transfer of Heat</h2>
+            <p>In nature, there are three different methods of transfer of heat:</p>
+            
+            <div class="video-embed">
+                <h3>Watch: Methods of Heat Transfer</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/lvyCe0UaqJY?start=13" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div class="transfer-modes">
+                <div class="mode-card">
+                    <h3>Conduction</h3>
+                    <p>This is the most significant method of transfer of heat in solids. In this method, heat is transferred from one particle (molecule), of the object, to the next, and then to the next, and so on, without the particles leaving their places.</p>
+                    <p><strong>Good conductors:</strong> Metals (iron, copper)</p>
+                    <p><strong>Insulators:</strong> Wood, plastic, cotton, air, water</p>
+                </div>
+                
+                <div class="mode-card">
+                    <h3>Convection</h3>
+                    <p>Heat transfer by actual movement of particles. Occurs in liquids and gases. Forms convection currents.</p>
+                    <p><strong>Examples:</strong> Heating water in flask, potassium permanganate experiment</p>
+                    <p><strong>Uses:</strong> Ventilators, chimneys, radiators, weather & winds</p>
+                </div>
+                
+                <div class="mode-card">
+                    <h3>Radiation</h3>
+                    <p>Heat transfer without medium. Works in vacuum. Sun heats earth by radiation.</p>
+                    <p><strong>Absorption:</strong> Black objects absorb more heat, white/shiny absorb less</p>
+                </div>
+            </div>
+            
+            <div class="activity">
+                <h3>Activity 5: Conduction Demonstration</h3>
+                <p>Take a metal rod. Coat it with a thick layer of wax. Fix some small buttons, on the wax, at regular intervals of 5 cm each. Heat the rod at one end. The buttons start falling down, one by one, from the side being heated up. This happens because of the transfer of heat, through the metal, and subsequent melting of the wax.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>10. Global Wind Patterns</h2>
+            <p>Uneven heating of earth creates global wind patterns. The places near to the equator receive maximum heat energy from the sun. The air at these places gets heated up, rises, and leaves a low pressure area behind it.</p>
+            
+            <div class="global-wind-diagram">
+                <h3>Global Air Patterns</h3>
+                <p>Equatorial regions receive maximum heating → air rises → low pressure → cooler air from 0-30° latitude moves in → creates trade winds</p>
+                <p>Polar regions are colder → wind currents from poles towards warmer latitudes</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>11. Land and Sea Breezes</h2>
+            <p>Water gets heated up slowly than land during day time. Hence, the air above the land gets heated up more quickly and rises up. Cooler air, from above the sea, then rushes in to take its place. We call this movement of air as a Sea breeze.</p>
+            
+            <div class="video-embed">
+                <h3>Watch: Land and Sea Breezes</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/mnVJqcXYKww" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <p>During night, water cools more slowly than land. The air, above the water, therefore, becomes warmer and rises up. Its place is taken up by the cooler air above the land. This movement of air is called as Land breeze.</p>
+            
+            <div class="global-wind-diagram">
+                <h3>Day time</h3>
+                <p>land warmer → air rises → cool sea breeze</p>
+                <h3>Night time</h3>
+                <p>land cooler → sea warmer → air rises → land breeze</p>
+            </div>
+            
+            <p>These land, and sea, breezes help in maintaining the temperature of air at a more or less uniform value through the day and the night. We, therefore, have an equitable climate on places near the sea.</p>
+        </div>
+
+        <div class="section">
+            <h2>12. Cyclones</h2>
+            <p>Cyclones are huge storms, having strong spiralling winds, going inwards and upwards, at a speed of around 150 km/hr over warm ocean regions. Cyclones rotate in anticlockwise/clockwise (northern hemisphere/southern hemisphere) direction around the centre of the storm (eye) which is the calmest, and low pressure, region.</p>
+            
+            <div class="video-embed">
+                <h3>Watch: Formation and Impact of Cyclones</h3>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/Ae1Ur3nH12A" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <p>The wind speed, wind direction, temperature and humidity, of a place, all contribute to the development of the atmospheric convection currents into storms and cyclones. The strong wind sometimes forms a cloud and grows into a thunderstorm (having speed of 80-150 km/hr).</p>
+            
+            <p>The difference, in the pressure, determines the intensity of the cyclone and the strength of the winds. Once a mature cyclone forms, it can last up to a week, depending upon the atmospheric and oceanic conditions. When cyclones come on to the land, the accompanying heavy rain, strong winds and large waves, can damage buildings, trees and cars.</p>
+        </div>
+
+        <div class="section">
+            <h2>13. Radiation Properties</h2>
+            <p>All hot objects give out, or radiate, heat energy. Black objects are very good absorbers of radiant energy. Highly polished, or white objects, absorb very little amount of the radiant energy falling on them.</p>
+            
+            <div class="activity">
+                <h3>Activity 7: Radiation Absorption Test</h3>
+                <p>Take two identical thermometers and keep them side by side. Wrap a piece of black paper on the bulb of one thermometer and white paper on the other. Keep both at equal distance from a fireplace. The temperature of the thermometer with black paper rises faster, showing that black objects absorb heat better than white objects.</p>
+            </div>
+            
+            <h3>Uses of Radiation Properties</h3>
+            <ul>
+                <li>Black bottoms of cooking utensils</li>
+                <li>White/light colored clothes in summer</li>
+                <li>Shining tea/coffee pots</li>
+                <li>Firefighter shiny helmets</li>
+                <li>Light-colored house walls</li>
+                <li>Shining glass buildings</li>
+                <li>Thermos flask</li>
+            </ul>
+        </div>
+
+        <div class="quiz-section">
+            <h2>📝 Interactive Quiz</h2>
+            
+            <div class="question">
+                <h3>Question 1: What is the normal human body temperature in Celsius?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="35"> A) 35°C</label>
+                    <label><input type="radio" name="q1" value="36.9"> B) 36.9°C</label>
+                    <label><input type="radio" name="q1" value="38"> C) 38°C</label>
+                    <label><input type="radio" name="q1" value="40"> D) 40°C</label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h3>Question 2: Which mode of heat transfer does NOT require a medium?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="conduction"> A) Conduction</label>
+                    <label><input type="radio" name="q2" value="convection"> B) Convection</label>
+                    <label><input type="radio" name="q2" value="radiation"> C) Radiation</label>
+                    <label><input type="radio" name="q2" value="all"> D) All of them</label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h3>Question 3: At what temperature does water freeze in Fahrenheit?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="0"> A) 0°F</label>
+                    <label><input type="radio" name="q3" value="32"> B) 32°F</label>
+                    <label><input type="radio" name="q3" value="100"> C) 100°F</label>
+                    <label><input type="radio" name="q3" value="212"> D) 212°F</label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h3>Question 4: Which material is a good conductor of heat?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="wood"> A) Wood</label>
+                    <label><input type="radio" name="q4" value="plastic"> B) Plastic</label>
+                    <label><input type="radio" name="q4" value="cotton"> C) Cotton</label>
+                    <label><input type="radio" name="q4" value="copper"> D) Copper</label>
+                </div>
+            </div>
+            
+            <div class="question">
+                <h3>Question 5: What happens to most materials when heated?</h3>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="contract"> A) Contract</label>
+                    <label><input type="radio" name="q5" value="expand"> B) Expand</label>
+                    <label><input type="radio" name="q5" value="melt"> C) Melt</label>
+                    <label><input type="radio" name="q5" value="freeze"> D) Freeze</label>
+                </div>
+            </div>
+            
+            <button class="submit-btn" onclick="checkQuiz()">Submit Quiz</button>
+            <div id="quizResult" class="result"></div>
+        </div>
+
+        <footer>
+            <h3>📚 Physics Education - Heat & Temperature</h3>
+            <p>Complete Guide with Activities, Examples, and Interactive Quiz</p>
+            <p>🔥 Master Your Understanding of Heat & Temperature 🔥</p>
+        </footer>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            const temp = parseFloat(document.getElementById('tempInput').value);
+            const scale = document.getElementById('scaleSelect').value;
+            const resultDiv = document.getElementById('conversionResult');
+
+            if (isNaN(temp)) {
+                resultDiv.innerHTML = '<span style="color: red;">Please enter a valid number</span>';
+                return;
+            }
+
+            let result, fromScale, toScale;
+            if (scale === 'celsius') {
+                result = (temp * 9/5) + 32;
+                fromScale = '°C';
+                toScale = '°F';
+            } else {
+                result = (temp - 32) * 5/9;
+                fromScale = '°F';
+                toScale = '°C';
+            }
+
+            resultDiv.innerHTML = `<strong>${temp}${fromScale} = ${result.toFixed(2)}${toScale}</strong>`;
+        }
+
+        function checkQuiz() {
+            const answers = [
+                document.querySelector('input[name="q1"]:checked'),
+                document.querySelector('input[name="q2"]:checked'),
+                document.querySelector('input[name="q3"]:checked'),
+                document.querySelector('input[name="q4"]:checked'),
+                document.querySelector('input[name="q5"]:checked')
+            ];
+
+            if (answers.some(ans => ans === null)) {
+                alert('Please answer all questions!');
+                return;
+            }
+
+            const correctAnswers = ['36.9', 'radiation', '32', 'copper', 'expand'];
+            let score = 0;
+
+            answers.forEach((ans, index) => {
+                if (ans.value === correctAnswers[index]) {
+                    score++;
+                }
+            });
+
+            const resultDiv = document.getElementById('quizResult');
+            resultDiv.innerHTML = `
+                <h3>Quiz Results: ${score}/5 Correct</h3>
+                <p>You scored: <strong>${Math.round((score/5)*100)}%</strong></p>
+                <p>${score >= 4 ? 'Excellent! You have a strong understanding of heat and temperature.' : 
+                   score >= 3 ? 'Good job! You have a good understanding but review the concepts.' : 
+                   'Review the material to strengthen your understanding.'}</p>
+            `;
+            resultDiv.style.display = 'block';
+            resultDiv.className = score >= 4 ? 'result correct' : 'result incorrect';
+        }
+    </script>
+</body>
+</html>
