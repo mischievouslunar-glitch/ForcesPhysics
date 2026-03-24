@@ -1,725 +1,1522 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Heat & Temperature Complete Guide</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background: linear-gradient(135deg, #87CEEB, #4682B4, #2F4F4F);
-            color: #333;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: linear-gradient(45deg, #4682B4, #87CEEB);
-            border-radius: 10px;
-            color: white;
-        }
-        
-        h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
-        .subtitle {
-            font-size: 1.4rem;
-            opacity: 0.9;
-        }
-        
-        .section {
-            margin-bottom: 40px;
-            padding: 25px;
-            border-radius: 10px;
-            background: white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        h2 {
-            color: #2F4F4F;
-            margin-bottom: 15px;
-            font-size: 1.8rem;
-            border-bottom: 3px solid #4682B4;
-            padding-bottom: 10px;
-        }
-        
-        h3 {
-            color: #4682B4;
-            margin: 15px 0 10px 0;
-            font-size: 1.4rem;
-        }
-        
-        p {
-            margin-bottom: 15px;
-            line-height: 1.7;
-        }
-        
-        .highlight {
-            background: linear-gradient(120deg, #B0E0E6, #87CEEB);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border-left: 4px solid #4682B4;
-        }
-        
-        .do-you-know {
-            background: #FFE4B5;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border-left: 4px solid #DEB887;
-            font-style: italic;
-        }
-        
-        .activity {
-            background: #E0FFD1;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            border-left: 4px solid #4CAF50;
-        }
-        
-        .table-container {
-            overflow-x: auto;
-            margin: 20px 0;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 15px 0;
-        }
-        
-        th, td {
-            border: 1px solid #4682B4;
-            padding: 12px;
-            text-align: left;
-        }
-        
-        th {
-            background: #2F4F4F;
-            color: white;
-        }
-        
-        tr:nth-child(even) {
-            background-color: #f0f8ff;
-        }
-        
-        .thermometer-demo {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            margin: 20px 0;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        
-        .thermometer-item {
-            text-align: center;
-            padding: 15px;
-            border: 2px solid #4682B4;
-            border-radius: 10px;
-            background: #E6F3FF;
-            min-width: 200px;
-        }
-        
-        .transfer-modes {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-        
-        .mode-card {
-            background: #F5F5F5;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #4682B4;
-        }
-        
-        .video-embed {
-            margin: 20px 0;
-            text-align: center;
-        }
-        
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-        
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .quiz-section {
-            background: #FFF8DC;
-            padding: 25px;
-            border-radius: 10px;
-            margin: 30px 0;
-        }
-        
-        .question {
-            margin-bottom: 20px;
-            padding: 15px;
-            background: white;
-            border-radius: 8px;
-            border-left: 4px solid #DEB887;
-        }
-        
-        .options label {
-            display: block;
-            padding: 10px;
-            margin: 5px 0;
-            background: #f9f9f9;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        
-        .options label:hover {
-            background: #E6F3FF;
-        }
-        
-        .submit-btn {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.1rem;
-            margin-top: 20px;
-        }
-        
-        .submit-btn:hover {
-            background: #388E3C;
-        }
-        
-        .result {
-            margin-top: 20px;
-            padding: 15px;
-            border-radius: 8px;
-            display: none;
-        }
-        
-        .correct {
-            background: #C8E6C9;
-            color: #2E7D32;
-        }
-        
-        .incorrect {
-            background: #FFCDD2;
-            color: #C62828;
-        }
-        
-        .formula-box {
-            background: #E6F3FF;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            text-align: center;
-            border: 2px solid #4682B4;
-        }
-        
-        .temperature-converter {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            margin: 15px 0;
-            flex-wrap: wrap;
-        }
-        
-        input, select, button {
-            padding: 10px;
-            border: 2px solid #4682B4;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        
-        button {
-            background: #2F4F4F;
-            color: white;
-            cursor: pointer;
-        }
-        
-        button:hover {
-            background: #1a237e;
-        }
-        
-        .global-wind-diagram {
-            text-align: center;
-            margin: 20px 0;
-            padding: 20px;
-            background: #E8F5E8;
-            border-radius: 10px;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding: 20px;
-            background: #2F4F4F;
-            color: white;
-            border-radius: 10px;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .thermometer-demo {
-                flex-direction: column;
-            }
-            
-            .transfer-modes {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Force &amp; Pressure — DAV Class 8</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Instrument+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#07090f;
+  --glass:rgba(255,255,255,.045);
+  --glass2:rgba(255,255,255,.08);
+  --gb:rgba(255,255,255,.09);
+  --gb2:rgba(255,255,255,.18);
+  --teal:#5ef0c8;--blue:#60b8f2;--amber:#f2ca60;
+  --rose:#f26088;--violet:#a78bfa;--green:#6ee87a;
+  --text:#dce4f2;--muted:#68758f;--dim:#38415a;
+  --font:'Instrument Sans',sans-serif;
+  --display:'Playfair Display',serif;
+  --mono:'JetBrains Mono',monospace;
+  --r:14px;--rsm:9px;--sw:258px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:15px;line-height:1.7;overflow-x:hidden;}
+
+/* ORBS */
+.orbs{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+.orb{position:absolute;border-radius:50%;filter:blur(130px);}
+.o1{width:700px;height:700px;background:#0d2850;opacity:.22;top:-180px;left:-160px;}
+.o2{width:500px;height:500px;background:#062a1c;opacity:.18;top:45%;right:-80px;}
+.o3{width:400px;height:400px;background:#2c1c04;opacity:.15;bottom:5%;left:30%;}
+
+/* PROGRESS */
+.pbar{position:fixed;top:0;left:0;right:0;height:2px;z-index:200;}
+.pfill{height:100%;background:linear-gradient(90deg,var(--teal),var(--blue));width:0%;transition:width .08s;}
+
+/* MOBILE TOP BAR */
+.mob-bar{
+  display:none;position:fixed;top:0;left:0;right:0;z-index:150;
+  height:52px;align-items:center;justify-content:space-between;
+  padding:0 1.2rem;
+  background:rgba(7,9,16,.92);backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--gb);
+}
+.mob-title{font-family:var(--display);font-size:.98rem;font-weight:700;}
+.mob-btn{
+  background:var(--glass);border:1px solid var(--gb);border-radius:var(--rsm);
+  padding:5px 12px;color:var(--muted);cursor:pointer;
+  font-family:var(--font);font-size:12px;font-weight:600;letter-spacing:.04em;
+  transition:all .15s;
+}
+.mob-btn:hover{color:var(--text);border-color:var(--gb2);}
+
+/* OVERLAY */
+.overlay{display:none;position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.55);backdrop-filter:blur(3px);}
+.overlay.show{display:block;}
+
+/* SIDEBAR */
+aside{
+  position:fixed;top:0;left:0;bottom:0;width:var(--sw);
+  background:rgba(7,9,16,.8);backdrop-filter:blur(22px);
+  border-right:1px solid var(--gb);
+  display:flex;flex-direction:column;z-index:100;
+  transition:transform .28s cubic-bezier(.4,0,.2,1);
+}
+aside.closed{transform:translateX(-100%);}
+.brand{padding:1.8rem 1.5rem 1.3rem;border-bottom:1px solid var(--gb);}
+.brand h1{font-family:var(--display);font-size:1.15rem;font-weight:700;color:var(--text);letter-spacing:-.02em;line-height:1.3;}
+.brand p{font-size:10px;color:var(--muted);margin-top:3px;letter-spacing:.07em;text-transform:uppercase;}
+.snav{flex:1;padding:.9rem .55rem;overflow-y:auto;}
+.snav::-webkit-scrollbar{width:3px;}
+.snav::-webkit-scrollbar-thumb{background:var(--dim);border-radius:99px;}
+.cat{font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);padding:.5rem .75rem .2rem;font-weight:700;}
+.nl{
+  display:flex;align-items:center;gap:8px;padding:.42rem .75rem;
+  border-radius:var(--rsm);color:var(--muted);text-decoration:none;
+  font-size:.82rem;font-weight:500;transition:all .14s;
+  border:1px solid transparent;cursor:pointer;
+}
+.nl:hover{color:var(--text);background:var(--glass);border-color:var(--gb);}
+.nl.active{color:var(--teal);background:rgba(94,240,200,.07);border-color:rgba(94,240,200,.17);}
+.nd{width:5px;height:5px;border-radius:50%;background:currentColor;opacity:.45;flex-shrink:0;}
+.nl.active .nd{opacity:1;}
+.sfooter{padding:1rem 1.5rem;border-top:1px solid var(--gb);font-size:10px;color:var(--dim);}
+
+/* LAYOUT */
+.shell{position:relative;z-index:1;display:grid;grid-template-columns:var(--sw) 1fr;min-height:100vh;}
+main{grid-column:2;padding:0 3.8rem 6rem;max-width:850px;}
+
+/* SECTIONS */
+section{padding:3.8rem 0 2.8rem;border-bottom:1px solid var(--gb);}
+section:last-child{border-bottom:none;}
+.eyebrow{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:600;margin-bottom:.5rem;}
+.stitle{font-family:var(--display);font-size:clamp(1.7rem,2.8vw,2.5rem);font-weight:700;letter-spacing:-.025em;line-height:1.15;color:var(--text);margin-bottom:.8rem;}
+.sintro{color:var(--muted);font-size:.93rem;max-width:580px;margin-bottom:2rem;line-height:1.75;}
+.hero{padding:4.5rem 0 2.8rem;}
+.hero .stitle{font-size:clamp(2.1rem,4vw,3.3rem);}
+.pills{display:flex;gap:7px;flex-wrap:wrap;margin-top:1.4rem;}
+.pill{background:var(--glass);border:1px solid var(--gb);border-radius:999px;padding:4px 13px;font-size:11px;color:var(--muted);}
+
+/* GLASS CARD */
+.cg{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:10px;margin:1.5rem 0;}
+.gc{background:var(--glass);border:1px solid var(--gb);border-radius:var(--r);padding:1.3rem;backdrop-filter:blur(20px);transition:background .15s,border-color .15s;}
+.gc:hover{background:var(--glass2);border-color:var(--gb2);}
+.gc .ca{width:22px;height:2px;border-radius:2px;margin-bottom:.85rem;}
+.gc h3{font-family:var(--display);font-size:.95rem;font-weight:600;margin-bottom:.4rem;}
+.gc p{font-size:.84rem;color:var(--muted);line-height:1.65;}
+
+/* FORMULA */
+.frow{display:flex;flex-direction:column;gap:9px;margin:1.5rem 0;}
+.fb{background:var(--glass);border:1px solid var(--gb);border-left:2px solid transparent;border-radius:var(--rsm);padding:1rem 1.4rem;display:flex;align-items:center;gap:1.8rem;flex-wrap:wrap;backdrop-filter:blur(12px);}
+.fexpr{font-family:var(--mono);font-size:1.2rem;font-weight:500;white-space:nowrap;}
+.fparts{font-size:.81rem;color:var(--muted);line-height:1.85;}
+.fparts b{color:var(--text);font-weight:500;}
+
+/* CALLOUT */
+.callout{border-left:2px solid var(--teal);background:rgba(94,240,200,.04);border:1px solid rgba(94,240,200,.12);border-left-width:2px;border-radius:var(--rsm);padding:.85rem 1.2rem;font-size:.87rem;color:var(--muted);margin:1.3rem 0;line-height:1.7;}
+.callout strong{color:var(--teal);font-weight:600;}
+.ca-amber{background:rgba(242,202,96,.04);border-color:rgba(242,202,96,.12);border-left-color:var(--amber);}
+.ca-amber strong{color:var(--amber);}
+.ca-rose{background:rgba(242,96,136,.04);border-color:rgba(242,96,136,.12);border-left-color:var(--rose);}
+.ca-rose strong{color:var(--rose);}
+.ca-violet{background:rgba(167,139,250,.04);border-color:rgba(167,139,250,.12);border-left-color:var(--violet);}
+.ca-violet strong{color:var(--violet);}
+.ca-blue{background:rgba(96,184,242,.04);border-color:rgba(96,184,242,.12);border-left-color:var(--blue);}
+.ca-blue strong{color:var(--blue);}
+.ca-teal{background:rgba(94,240,200,.05);border-color:rgba(94,240,200,.15);border-left-color:var(--teal);}
+.ca-teal strong{color:var(--teal);}
+.ca-green{background:rgba(110,232,122,.04);border-color:rgba(110,232,122,.13);border-left-color:var(--green);}
+.ca-green strong{color:var(--green);}
+
+/* KEY POINTS */
+.kp{display:flex;flex-direction:column;gap:7px;margin:1.2rem 0;}
+.kp-row{display:flex;gap:10px;align-items:flex-start;font-size:.87rem;}
+.kp-dot{width:5px;height:5px;border-radius:50%;background:var(--teal);margin-top:.6rem;flex-shrink:0;}
+.kp-row span{color:var(--muted);line-height:1.65;}
+.kp-row b{color:var(--text);}
+
+/* STEPS */
+.steps{display:flex;flex-direction:column;gap:9px;margin:1.3rem 0;}
+.step{display:flex;gap:12px;align-items:flex-start;background:var(--glass);border:1px solid var(--gb);border-radius:var(--rsm);padding:.9rem 1.1rem;}
+.snum{width:24px;height:24px;border-radius:50%;flex-shrink:0;border:1px solid var(--gb2);background:var(--glass2);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;font-weight:500;color:var(--teal);}
+.step h4{font-size:.86rem;font-weight:600;margin-bottom:1px;color:var(--text);}
+.step p{font-size:.81rem;color:var(--muted);}
+
+/* COMPARISON */
+.comp{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1.3rem 0;}
+.cp{background:var(--glass);border:1px solid var(--gb);border-radius:var(--r);padding:1.15rem 1.3rem;}
+.cp h4{font-family:var(--display);font-size:.93rem;font-weight:600;margin-bottom:.7rem;}
+.cp ul{list-style:none;display:flex;flex-direction:column;gap:6px;}
+.cp li{font-size:.83rem;color:var(--muted);padding-left:14px;position:relative;line-height:1.55;}
+.cp li::before{content:'';position:absolute;left:0;top:.6em;width:5px;height:5px;border-radius:50%;background:var(--teal);}
+
+/* EXAMPLES GRID */
+.eg{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:9px;margin:1.2rem 0;}
+.ei{background:var(--glass);border:1px solid var(--gb);border-radius:var(--rsm);padding:.9rem 1rem;}
+.et{font-size:.82rem;font-weight:600;color:var(--text);margin-bottom:3px;}
+.ed{font-size:.78rem;color:var(--muted);line-height:1.55;}
+
+/* TABLE */
+.dt{width:100%;border-collapse:collapse;font-size:.87rem;margin:1.5rem 0;}
+.dt thead tr{border-bottom:1px solid var(--gb2);}
+.dt th{padding:9px 14px;text-align:left;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:600;}
+.dt td{padding:10px 14px;border-bottom:1px solid var(--gb);color:var(--muted);vertical-align:middle;}
+.dt tr:last-child td{border-bottom:none;}
+.dt tr:hover td{background:rgba(255,255,255,.02);color:var(--text);}
+.tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11px;font-weight:600;letter-spacing:.03em;}
+.tt{background:rgba(94,240,200,.09);color:var(--teal);border:1px solid rgba(94,240,200,.2);}
+.tb{background:rgba(96,184,242,.09);color:var(--blue);border:1px solid rgba(96,184,242,.2);}
+.ta{background:rgba(242,202,96,.09);color:var(--amber);border:1px solid rgba(242,202,96,.2);}
+.tr{background:rgba(242,96,136,.09);color:var(--rose);border:1px solid rgba(242,96,136,.2);}
+.tv{background:rgba(167,139,250,.09);color:var(--violet);border:1px solid rgba(167,139,250,.2);}
+
+/* INTERACTIVE */
+.ibox{background:var(--glass);border:1px solid var(--gb);border-radius:var(--r);padding:1.7rem;margin:1.5rem 0;backdrop-filter:blur(20px);}
+.ititle{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:1.2rem;}
+.srow{display:grid;grid-template-columns:160px 1fr 72px;align-items:center;gap:12px;margin-bottom:10px;}
+.slbl{font-size:13px;color:var(--muted);}
+input[type=range]{width:100%;cursor:pointer;outline:none;-webkit-appearance:none;appearance:none;height:3px;background:var(--dim);border-radius:99px;border:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:13px;height:13px;border-radius:50%;background:var(--teal);cursor:pointer;box-shadow:0 0 7px rgba(94,240,200,.35);transition:transform .1s;}
+input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.2);}
+.sval{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--text);text-align:right;}
+.rpanel{margin-top:1.2rem;background:rgba(0,0,0,.3);border:1px solid var(--gb);border-radius:var(--rsm);padding:1.1rem 1.3rem;display:flex;align-items:center;gap:1.8rem;flex-wrap:wrap;}
+.rnum{font-family:var(--mono);font-size:2rem;font-weight:500;}
+.runit{font-size:11px;color:var(--muted);margin-top:2px;}
+.rinsight{font-size:13px;color:var(--muted);flex:1;line-height:1.6;}
+
+/* LIQUID BTNS */
+.lbtns{display:flex;gap:7px;flex-wrap:wrap;margin:9px 0 1.1rem;}
+.lbtn{background:var(--glass);border:1px solid var(--gb);border-radius:var(--rsm);padding:5px 13px;font-size:12px;color:var(--muted);cursor:pointer;font-family:var(--font);font-weight:500;transition:all .14s;}
+.lbtn:hover{color:var(--text);border-color:var(--gb2);}
+.lbtn.sel{border-color:var(--teal);color:var(--teal);background:rgba(94,240,200,.07);}
+
+/* SCALAR/VECTOR */
+.svgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:1.3rem 0;}
+.svp{background:var(--glass);border:1px solid var(--gb);border-radius:var(--r);padding:1.2rem;}
+.svp h3{font-family:var(--display);font-size:.95rem;font-weight:600;margin-bottom:.12rem;}
+.svp .sub{font-size:.77rem;color:var(--muted);margin-bottom:.85rem;}
+.svi{display:flex;justify-content:space-between;align-items:center;padding:6px 0;border-bottom:1px solid var(--gb);font-size:.83rem;}
+.svi:last-child{border-bottom:none;}
+.svi-n{color:var(--text);}
+.svi-e{color:var(--muted);font-family:var(--mono);font-size:.76rem;}
+
+/* DENSITY BARS */
+.dbars{display:flex;align-items:flex-end;gap:13px;padding:1.3rem;background:var(--glass);border:1px solid var(--gb);border-radius:var(--r);margin:1.3rem 0;overflow-x:auto;}
+.dbw{display:flex;flex-direction:column;align-items:center;gap:6px;flex-shrink:0;}
+.db{width:52px;border-radius:4px 4px 0 0;border-top:2px solid;opacity:.75;transition:opacity .15s;}
+.db:hover{opacity:1;}
+.dbl{font-size:10px;color:var(--muted);text-align:center;}
+.dbv{font-family:var(--mono);font-size:10px;text-align:center;}
+
+/* QUIZ */
+.qcard{background:var(--glass);border:1px solid var(--gb);border-radius:var(--r);padding:1.5rem;margin-bottom:12px;}
+.qnum{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);font-weight:600;margin-bottom:.6rem;}
+.qq{font-size:.93rem;color:var(--text);margin-bottom:1rem;line-height:1.6;}
+.qopts{display:grid;gap:7px;}
+.qopt{background:rgba(255,255,255,.03);border:1px solid var(--gb);border-radius:var(--rsm);padding:.6rem .9rem;font-size:.84rem;color:var(--muted);text-align:left;cursor:pointer;font-family:var(--font);transition:all .13s;}
+.qopt:hover:not(:disabled){border-color:var(--gb2);background:var(--glass2);color:var(--text);}
+.qopt.correct{background:rgba(94,240,200,.08);border-color:rgba(94,240,200,.3);color:var(--teal);}
+.qopt.wrong{background:rgba(242,96,136,.08);border-color:rgba(242,96,136,.3);color:var(--rose);}
+.qfb{margin-top:9px;font-size:.81rem;min-height:16px;color:var(--muted);line-height:1.6;}
+.rbtn{background:var(--glass);border:1px solid var(--gb);border-radius:var(--rsm);padding:9px 22px;color:var(--muted);cursor:pointer;font-family:var(--font);font-size:13px;font-weight:500;transition:all .14s;}
+.rbtn:hover{border-color:var(--gb2);color:var(--text);background:var(--glass2);}
+
+/* MISC */
+::-webkit-scrollbar{width:4px;height:4px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--dim);border-radius:99px;}
+::selection{background:rgba(94,240,200,.18);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:820px){
+  .mob-bar{display:flex;}
+  aside{transform:translateX(-100%);}
+  aside.open{transform:translateX(0);}
+  .shell{grid-template-columns:1fr;}
+  main{grid-column:1;padding:4.5rem 1.25rem 5rem;}
+  .pbar{left:0;}
+  section{padding:2.8rem 0 2rem;}
+  .hero{padding:3rem 0 2rem;}
+  .srow{grid-template-columns:1fr 64px;gap:8px;}
+  .slbl{display:none;}
+  .svgrid,.comp{grid-template-columns:1fr;}
+  .cg{grid-template-columns:1fr;}
+  .eg{grid-template-columns:1fr 1fr;}
+  .fexpr{font-size:1.05rem;}
+  .rnum{font-size:1.6rem;}
+}
+@media(max-width:420px){
+  .eg{grid-template-columns:1fr;}
+  main{padding:4.2rem 1rem 4rem;}
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🔥 HEAT & TEMPERATURE 🌡️</h1>
-            <p class="subtitle">Complete Educational Guide - Everything You Need to Know</p>
-        </header>
 
-        <div class="section">
-            <h2>1. Hot and Cold - Temperature</h2>
-            <p>We are all familiar with the sensations of 'hot' and 'cold'. On a hot summer day, we find it uncomfortable to walk barefoot on a cemented floor, as it is too 'hot'. During winter months, we will find that very floor as being too 'cold'.</p>
-            
-            <p>We express the degree of hotness of a body through its temperature. The more is the temperature of a body, the hotter it is and vice-versa.</p>
-            
-            <div class="highlight">
-                <strong>Key Point:</strong> Temperature is an indicator of the thermal energy of a body.
-            </div>
-        </div>
+<div class="orbs"><div class="orb o1"></div><div class="orb o2"></div><div class="orb o3"></div></div>
+<div class="pbar"><div class="pfill" id="prog"></div></div>
 
-        <div class="section">
-            <h2>2. Heat as Energy</h2>
-            <p>We know from our daily experience, that a bottle of ice-cold milk, left on a table on a hot summer day, soon warms up. A glass tumbler, of boiling-hot milk, kept on the same table, cools down after a while. It shows that when the temperatures of a body and its surroundings are different, there is a transfer of energy between the body and its surroundings.</p>
-            
-            <div class="do-you-know">
-                <strong>Do You Know?</strong> In early days, heat was considered as a fluid (liquid) that flowed from a hotter body to a colder body. This (weightless and colourless) fluid was called the 'calorific'. This theory was shown to be incorrect by the experiments of physicists, like Davy, Count Rumford and Joule, who showed that heat is just a form of energy.
-            </div>
-            
-            <div class="activity">
-                <h3>Activity 1: Heat Can Do Work</h3>
-                <p><strong>To show that we can get other forms of energy from heat.</strong> Take a vessel half filled with water. Cover it with a light aluminium lid and heat it over a flame. We will see that the water starts boiling after a while. The lid then 'rises up', and 'falls down', again and again. Here, the steam (formed by the heated water) could raise the lid. It, therefore, does mechanical work. This shows that heat is a form of energy and it can be used to do mechanical work.</p>
-            </div>
-            
-            <div class="highlight">
-                <strong>Definitions:</strong>
-                <ol>
-                    <li>Heat is a form of energy (heat energy/thermal energy), that is transferred from one body to another, due to the existence of a temperature difference between them.</li>
-                    <li>Transfer of heat energy/thermal energy always takes place from the body at a higher temperature to that at a lower temperature.</li>
-                </ol>
-            </div>
-        </div>
+<header class="mob-bar">
+  <span class="mob-title">Force &amp; Pressure</span>
+  <button class="mob-btn" id="menuBtn" onclick="toggleNav()">Menu</button>
+</header>
+<div class="overlay" id="overlay" onclick="toggleNav()"></div>
 
-        <div class="section">
-            <h2>3. Heat and Temperature Relationship</h2>
-            <p>We often observe that when we heat a body, its temperature rises. This indicates that heat and temperature are related to each other. Heat is the energy of a body that is due to the motion of its constituents particles (molecules). Temperature, on the other hand, is just an indicator of this energy.</p>
-            
-            <p>Even a cold object possesses heat energy due to the motion of its particles (molecules). When we add, (or remove) heat (from) a body, motion of its molecules becomes faster (or slower).</p>
-        </div>
+<div class="shell">
+<aside id="sidebar">
+  <div class="brand">
+    <h1>Force &amp; Pressure</h1>
+    <p>DAV Class 8 — Chapter 4</p>
+  </div>
+  <nav class="snav">
+    <div class="cat">DAV Chapter 4</div>
+    <a class="nl active" href="#what"><div class="nd"></div>What is Force?</a>
+    <a class="nl" href="#effects"><div class="nd"></div>Effects of Force</a>
+    <a class="nl" href="#balanced"><div class="nd"></div>Balanced &amp; Unbalanced</a>
+    <a class="nl" href="#types"><div class="nd"></div>Types of Forces</a>
+    <a class="nl" href="#contact"><div class="nd"></div>Contact Forces</a>
+    <a class="nl" href="#noncontact"><div class="nd"></div>Non-Contact Forces</a>
+    <a class="nl" href="#pressure"><div class="nd"></div>What is Pressure?</a>
+    <a class="nl" href="#liquid-pressure"><div class="nd"></div>Liquid Pressure</a>
+    <a class="nl" href="#atm"><div class="nd"></div>Atmospheric Pressure</a>
+    <div class="cat">Mechanics Bridge</div>
+    <a class="nl" href="#speed"><div class="nd"></div>Speed &amp; Velocity</a>
+    <a class="nl" href="#acceleration"><div class="nd"></div>Acceleration</a>
+    <a class="nl" href="#scalar"><div class="nd"></div>Scalar &amp; Vector</a>
+    <a class="nl" href="#density"><div class="nd"></div>Density</a>
+    <div class="cat">Class 9 — Laws of Motion</div>
+    <a class="nl" href="#bridge"><div class="nd"></div>Class 8 → 9 Bridge</a>
+    <a class="nl" href="#inertia"><div class="nd"></div>Inertia</a>
+    <a class="nl" href="#law1"><div class="nd"></div>Newton's 1st Law</a>
+    <a class="nl" href="#momentum"><div class="nd"></div>Momentum</a>
+    <a class="nl" href="#law2"><div class="nd"></div>Newton's 2nd Law</a>
+    <a class="nl" href="#law3"><div class="nd"></div>Newton's 3rd Law</a>
+    <a class="nl" href="#conservation"><div class="nd"></div>Conservation of Momentum</a>
+    <a class="nl" href="#summary"><div class="nd"></div>Full Summary</a>
+    <div class="cat">Practice</div>
+    <a class="nl" href="#quiz"><div class="nd"></div>Quiz — All Topics</a>
+  </nav>
+  <div class="sfooter">DAV Class 8 — The Living World</div>
+</aside>
 
-        <div class="section">
-            <h2>4. Effects of Heat</h2>
-            <p>When a body is heated, various types of physical and chemical changes are observed to take place.</p>
-            
-            <h3>Physical Changes</h3>
-            <ul>
-                <li><strong>(a) Change in temperature:</strong> Addition of heat to a body (usually) raises its temperature, whereas, removal of heat, from a body (usually), lowers its temperature.</li>
-                <li><strong>(b) Change of state:</strong> Addition, or removal, of heat to, or from, a body, can also bring about a change in its state. For example, on putting a tray of water (liquid form) in the freezer compartment of a refrigerator, the water freezes to form ice. Ice, as we know, is the solid form of water. Similarly, when water is heated over a flame, it starts boiling and gets converted into steam. Steam, as we know, is the gaseous or vapour form of water.</li>
-                <li><strong>(c) Thermal expansion:</strong> Most of solids, liquids and gases, are known to expand on heating. This phenomenon is called thermal expansion. For example, the metal rim, to be put on a cart wheel, is designed to have a (slightly) smaller diameter than that of the wheel. When this rim is heated, it becomes 'red-hot', expands, and slips on to the wheel easily. When it is cooled, it contracts and grips the wheel firmly.</li>
-            </ul>
-            
-            <h3>Chemical Changes</h3>
-            <p>Many chemical changes take place only when the reactants are heated up. For example, we can prepare oxygen, in the laboratory, by heating potassium chlorate (along with manganese oxide as a catalyst) over a flame.</p>
-            
-            <div class="do-you-know">
-                <strong>Do You Know?</strong> It is interesting to note that ice and cast iron are two of the few solids that contract on heating. Cold water, at 4°C, is known to expand on cooling. This special property of water helps us to understand (i) why water pipes sometimes burst at very cold places and (ii) a soft drink glass bottle often cracks when left in the freezer compartment for a long time. It is also linked with the survival of aquatic animals even at places where the (surrounding) atmospheric temperature goes down well below 0°C.
-            </div>
-        </div>
+<main>
 
-        <div class="section">
-            <h2>5. Measurement of Temperature</h2>
-            <p>We now know that heat is a form of energy and temperature is an indicator of that energy. We often feel that we can get 'an estimate' of the temperature of a body by just touching it. However, though our senses do give us an idea of temperature, they are often unreliable and misleading. For example, if we remove an ice tray, and a packet of frozen vegetables, from the freezer compartment, the ice tray may appear colder to our hand even though both are at the same temperature.</p>
-            
-            <p>We, therefore, need a more reliable method to know the relative hotness or coldness, i.e. the temperature of a given body. We use special instruments for this purpose. All such instruments, or devices, are known as thermometers.</p>
-            
-            <div class="activity">
-                <h3>Activity 2: Importance of Accurate Temperature Measurement</h3>
-                <p>List your ideas, about the 'needs' of different persons, to know the temperature of different objects accurately. Jot down your ideas in a tabular form as shown below.</p>
-            </div>
-        </div>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="eyebrow">DAV Class 8 Science — Chapter 4</div>
+  <h2 class="stitle">Force &amp; Pressure</h2>
+  <p class="sintro">Every topic from the DAV chapter — what is force, its effects, types of forces, pressure, liquid pressure, and atmospheric pressure — plus mechanics topics to prepare you for Class 9.</p>
+  <div class="pills">
+    <span class="pill">Effects of Force</span>
+    <span class="pill">Balanced &amp; Unbalanced</span>
+    <span class="pill">6 Types of Force</span>
+    <span class="pill">Pressure</span>
+    <span class="pill">Liquid Pressure</span>
+    <span class="pill">Atmospheric Pressure</span>
+    <span class="pill">Speed &amp; Velocity</span>
+    <span class="pill">Calculators</span>
+    <span class="pill">Quiz</span>
+  </div>
+</section>
 
-        <div class="section">
-            <h2>6. The Thermometer</h2>
-            <p>We find that many of the physical properties, (like thermal expansion, pressure, volume) of different materials, change with temperature in a regular and systematic manner. We can, therefore, use these properties as a way of measuring temperature. The simplest thermometer, with which we all are familiar, is the mercury in glass thermometer. It is based on the thermal expansion of mercury.</p>
-            
-            <div class="do-you-know">
-                <strong>Do You Know?</strong> Glass Thermometer: Mercury expands in a uniform way, and also remains in its liquid state, over a wide temperature range. It also does not stick to the walls of the glass capillary tube and is a shining silvery liquid. It is because of these reasons that mercury is often used in ordinary thermometers.
-            </div>
-            
-            <div class="thermometer-demo">
-                <div class="thermometer-item">
-                    <h3>Mercury Thermometer</h3>
-                    <p>Based on thermal expansion of mercury</p>
-                    <p>Consists of glass capillary tube with bulb</p>
-                </div>
-                <div class="thermometer-item">
-                    <h3>How It Works</h3>
-                    <p>Mercury expands when heated</p>
-                    <p>Length of mercury thread indicates temperature</p>
-                </div>
-            </div>
-        </div>
+<!-- ═══════════════════════════
+     WHAT IS FORCE
+═══════════════════════════ -->
+<section id="what">
+  <div class="eyebrow">DAV Chapter 4 — Topic 1</div>
+  <h2 class="stitle">What is Force?</h2>
+  <p class="sintro">A force is a push or a pull. It is an external agent that can change the state, shape, size, speed, or direction of an object.</p>
 
-        <div class="section">
-            <h2>7. Temperature Scales</h2>
-            <div class="formula-box">
-                <h3>Temperature Conversion Formula</h3>
-                <p><strong>°C = (°F - 32) × 5/9</strong></p>
-                <p><strong>°F = (°C × 9/5) + 32</strong></p>
-            </div>
-            
-            <div class="temperature-converter">
-                <input type="number" id="tempInput" placeholder="Enter temperature">
-                <select id="scaleSelect">
-                    <option value="celsius">°C</option>
-                    <option value="fahrenheit">°F</option>
-                </select>
-                <button onclick="convertTemperature()">Convert</button>
-                <div id="conversionResult"></div>
-            </div>
-            
-            <div class="table-container">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Event</th>
-                            <th>Celsius (°C)</th>
-                            <th>Fahrenheit (°F)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Normal room temperature</td>
-                            <td>23°C</td>
-                            <td>72°F</td>
-                        </tr>
-                        <tr>
-                            <td>Normal human body temperature</td>
-                            <td>36.9°C</td>
-                            <td>98.4°F</td>
-                        </tr>
-                        <tr>
-                            <td>Water boils at</td>
-                            <td>100°C</td>
-                            <td>212°F</td>
-                        </tr>
-                        <tr>
-                            <td>Water freezes at</td>
-                            <td>0°C</td>
-                            <td>32°F</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            
-            <p>The range of a laboratory thermometer can be from -10°C to 110°C. Thermometers, in the range 0°C to 100°C, are found more often in school laboratories.</p>
-        </div>
+  <div class="callout"><strong>Definition (write this in exams):</strong> Force is defined as an external agent which tries to bring a change in the state of rest or motion, or the shape/size of an object.</div>
 
-        <div class="section">
-            <h2>8. Clinical Thermometer</h2>
-            <p>We use a specially designed, and calibrated, (mercury in glass) thermometer to measure our body temperature. Such a thermometer is known as the clinical, or doctor's, thermometer.</p>
-            
-            <p>The clinical thermometer differs from an ordinary laboratory thermometer in two respects:</p>
-            <ol>
-                <li>It is calibrated from 35°C to 42°C only. This is so because this is the range over which the temperature of the normal human body can vary.</li>
-                <li>It has a slight 'bend', or kink, in its capillary tube. This kink is given the name constriction. The constriction ensures that mercury thread does not fall back, by itself, after this thermometer has been used to measure the temperature of a person. The reading can, therefore, be taken conveniently. This would not be the case if an ordinary laboratory thermometer was used for this purpose.</li>
-            </ol>
-            
-            <div class="do-you-know">
-                <strong>Do You Know?</strong> The normal human body temperature is the average body temperature of a large number of healthy persons. It is quite close to 36.9°C (or 98.4°F). A body temperature close to 40°C (or 104°F) indicates a condition of 'high fever.
-            </div>
-            
-            <div class="activity">
-                <h3>Activity 4: Measuring Body Temperature</h3>
-                <p>Before measuring the body temperature, wash the thermometer with an antiseptic solution. Hold it firmly and give it a few jerks. The jerks will bring the level of mercury below 35°C. Now place the thermometer gently under the tongue of the person being observed. Let it remain there for about one minute. Now take out the thermometer and note its reading. While reading, keep the line of sight along the convex meniscus of the level of mercury in the thermometer. This is the body temperature of the person under observation.</p>
-            </div>
-        </div>
+  <div class="cg">
+    <div class="gc"><div class="ca" style="background:var(--teal)"></div><h3>Push</h3><p>Applying force away from yourself. Pushing a door open, pushing a box across the floor, pushing a swing.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--blue)"></div><h3>Pull</h3><p>Applying force towards yourself. Drawing water from a well, pulling a drawer open, stretching a rubber band.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--amber)"></div><h3>Magnitude &amp; Direction</h3><p>Force has both magnitude (how strong) and direction (which way). Changing either one changes the effect of the force.</p></div>
+  </div>
 
-        <div class="section">
-            <h2>9. Transfer of Heat</h2>
-            <p>In nature, there are three different methods of transfer of heat:</p>
-            
-            <div class="video-embed">
-                <h3>Watch: Methods of Heat Transfer</h3>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/lvyCe0UaqJY?start=13" allowfullscreen></iframe>
-                </div>
-            </div>
-            
-            <div class="transfer-modes">
-                <div class="mode-card">
-                    <h3>Conduction</h3>
-                    <p>This is the most significant method of transfer of heat in solids. In this method, heat is transferred from one particle (molecule), of the object, to the next, and then to the next, and so on, without the particles leaving their places.</p>
-                    <p><strong>Good conductors:</strong> Metals (iron, copper)</p>
-                    <p><strong>Insulators:</strong> Wood, plastic, cotton, air, water</p>
-                </div>
-                
-                <div class="mode-card">
-                    <h3>Convection</h3>
-                    <p>Heat transfer by actual movement of particles. Occurs in liquids and gases. Forms convection currents.</p>
-                    <p><strong>Examples:</strong> Heating water in flask, potassium permanganate experiment</p>
-                    <p><strong>Uses:</strong> Ventilators, chimneys, radiators, weather & winds</p>
-                </div>
-                
-                <div class="mode-card">
-                    <h3>Radiation</h3>
-                    <p>Heat transfer without medium. Works in vacuum. Sun heats earth by radiation.</p>
-                    <p><strong>Absorption:</strong> Black objects absorb more heat, white/shiny absorb less</p>
-                </div>
-            </div>
-            
-            <div class="activity">
-                <h3>Activity 5: Conduction Demonstration</h3>
-                <p>Take a metal rod. Coat it with a thick layer of wax. Fix some small buttons, on the wax, at regular intervals of 5 cm each. Heat the rod at one end. The buttons start falling down, one by one, from the side being heated up. This happens because of the transfer of heat, through the metal, and subsequent melting of the wax.</p>
-            </div>
-        </div>
+  <div class="callout ca-amber"><strong>Important:</strong> For a force to come into play, two bodies must interact with each other — either directly (contact) or through a field (non-contact).</div>
 
-        <div class="section">
-            <h2>10. Global Wind Patterns</h2>
-            <p>Uneven heating of earth creates global wind patterns. The places near to the equator receive maximum heat energy from the sun. The air at these places gets heated up, rises, and leaves a low pressure area behind it.</p>
-            
-            <div class="global-wind-diagram">
-                <h3>Global Air Patterns</h3>
-                <p>Equatorial regions receive maximum heating → air rises → low pressure → cooler air from 0-30° latitude moves in → creates trade winds</p>
-                <p>Polar regions are colder → wind currents from poles towards warmer latitudes</p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>11. Land and Sea Breezes</h2>
-            <p>Water gets heated up slowly than land during day time. Hence, the air above the land gets heated up more quickly and rises up. Cooler air, from above the sea, then rushes in to take its place. We call this movement of air as a Sea breeze.</p>
-            
-            <div class="video-embed">
-                <h3>Watch: Land and Sea Breezes</h3>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/mnVJqcXYKww" allowfullscreen></iframe>
-                </div>
-            </div>
-            
-            <p>During night, water cools more slowly than land. The air, above the water, therefore, becomes warmer and rises up. Its place is taken up by the cooler air above the land. This movement of air is called as Land breeze.</p>
-            
-            <div class="global-wind-diagram">
-                <h3>Day time</h3>
-                <p>land warmer → air rises → cool sea breeze</p>
-                <h3>Night time</h3>
-                <p>land cooler → sea warmer → air rises → land breeze</p>
-            </div>
-            
-            <p>These land, and sea, breezes help in maintaining the temperature of air at a more or less uniform value through the day and the night. We, therefore, have an equitable climate on places near the sea.</p>
-        </div>
-
-        <div class="section">
-            <h2>12. Cyclones</h2>
-            <p>Cyclones are huge storms, having strong spiralling winds, going inwards and upwards, at a speed of around 150 km/hr over warm ocean regions. Cyclones rotate in anticlockwise/clockwise (northern hemisphere/southern hemisphere) direction around the centre of the storm (eye) which is the calmest, and low pressure, region.</p>
-            
-            <div class="video-embed">
-                <h3>Watch: Formation and Impact of Cyclones</h3>
-                <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/Ae1Ur3nH12A" allowfullscreen></iframe>
-                </div>
-            </div>
-            
-            <p>The wind speed, wind direction, temperature and humidity, of a place, all contribute to the development of the atmospheric convection currents into storms and cyclones. The strong wind sometimes forms a cloud and grows into a thunderstorm (having speed of 80-150 km/hr).</p>
-            
-            <p>The difference, in the pressure, determines the intensity of the cyclone and the strength of the winds. Once a mature cyclone forms, it can last up to a week, depending upon the atmospheric and oceanic conditions. When cyclones come on to the land, the accompanying heavy rain, strong winds and large waves, can damage buildings, trees and cars.</p>
-        </div>
-
-        <div class="section">
-            <h2>13. Radiation Properties</h2>
-            <p>All hot objects give out, or radiate, heat energy. Black objects are very good absorbers of radiant energy. Highly polished, or white objects, absorb very little amount of the radiant energy falling on them.</p>
-            
-            <div class="activity">
-                <h3>Activity 7: Radiation Absorption Test</h3>
-                <p>Take two identical thermometers and keep them side by side. Wrap a piece of black paper on the bulb of one thermometer and white paper on the other. Keep both at equal distance from a fireplace. The temperature of the thermometer with black paper rises faster, showing that black objects absorb heat better than white objects.</p>
-            </div>
-            
-            <h3>Uses of Radiation Properties</h3>
-            <ul>
-                <li>Black bottoms of cooking utensils</li>
-                <li>White/light colored clothes in summer</li>
-                <li>Shining tea/coffee pots</li>
-                <li>Firefighter shiny helmets</li>
-                <li>Light-colored house walls</li>
-                <li>Shining glass buildings</li>
-                <li>Thermos flask</li>
-            </ul>
-        </div>
-
-        <div class="quiz-section">
-            <h2>📝 Interactive Quiz</h2>
-            
-            <div class="question">
-                <h3>Question 1: What is the normal human body temperature in Celsius?</h3>
-                <div class="options">
-                    <label><input type="radio" name="q1" value="35"> A) 35°C</label>
-                    <label><input type="radio" name="q1" value="36.9"> B) 36.9°C</label>
-                    <label><input type="radio" name="q1" value="38"> C) 38°C</label>
-                    <label><input type="radio" name="q1" value="40"> D) 40°C</label>
-                </div>
-            </div>
-            
-            <div class="question">
-                <h3>Question 2: Which mode of heat transfer does NOT require a medium?</h3>
-                <div class="options">
-                    <label><input type="radio" name="q2" value="conduction"> A) Conduction</label>
-                    <label><input type="radio" name="q2" value="convection"> B) Convection</label>
-                    <label><input type="radio" name="q2" value="radiation"> C) Radiation</label>
-                    <label><input type="radio" name="q2" value="all"> D) All of them</label>
-                </div>
-            </div>
-            
-            <div class="question">
-                <h3>Question 3: At what temperature does water freeze in Fahrenheit?</h3>
-                <div class="options">
-                    <label><input type="radio" name="q3" value="0"> A) 0°F</label>
-                    <label><input type="radio" name="q3" value="32"> B) 32°F</label>
-                    <label><input type="radio" name="q3" value="100"> C) 100°F</label>
-                    <label><input type="radio" name="q3" value="212"> D) 212°F</label>
-                </div>
-            </div>
-            
-            <div class="question">
-                <h3>Question 4: Which material is a good conductor of heat?</h3>
-                <div class="options">
-                    <label><input type="radio" name="q4" value="wood"> A) Wood</label>
-                    <label><input type="radio" name="q4" value="plastic"> B) Plastic</label>
-                    <label><input type="radio" name="q4" value="cotton"> C) Cotton</label>
-                    <label><input type="radio" name="q4" value="copper"> D) Copper</label>
-                </div>
-            </div>
-            
-            <div class="question">
-                <h3>Question 5: What happens to most materials when heated?</h3>
-                <div class="options">
-                    <label><input type="radio" name="q5" value="contract"> A) Contract</label>
-                    <label><input type="radio" name="q5" value="expand"> B) Expand</label>
-                    <label><input type="radio" name="q5" value="melt"> C) Melt</label>
-                    <label><input type="radio" name="q5" value="freeze"> D) Freeze</label>
-                </div>
-            </div>
-            
-            <button class="submit-btn" onclick="checkQuiz()">Submit Quiz</button>
-            <div id="quizResult" class="result"></div>
-        </div>
-
-        <footer>
-            <h3>📚 Physics Education - Heat & Temperature</h3>
-            <p>Complete Guide with Activities, Examples, and Interactive Quiz</p>
-            <p>🔥 Master Your Understanding of Heat & Temperature 🔥</p>
-        </footer>
+  <div class="frow">
+    <div class="fb" style="border-left-color:var(--teal)">
+      <div class="fexpr" style="color:var(--teal)">Force = mass × acceleration</div>
+      <div class="fparts">Unit: <b>Newton (N)</b><br/>1 Newton = force needed to give 1 kg an acceleration of 1 m/s²</div>
     </div>
+  </div>
+</section>
 
-    <script>
-        function convertTemperature() {
-            const temp = parseFloat(document.getElementById('tempInput').value);
-            const scale = document.getElementById('scaleSelect').value;
-            const resultDiv = document.getElementById('conversionResult');
+<!-- ═══════════════════════════
+     EFFECTS OF FORCE
+═══════════════════════════ -->
+<section id="effects">
+  <div class="eyebrow">DAV Chapter 4 — Topic 2</div>
+  <h2 class="stitle">Effects of Force</h2>
+  <p class="sintro">A force can produce four distinct effects on an object. You must know all four with real-life examples for the exam.</p>
 
-            if (isNaN(temp)) {
-                resultDiv.innerHTML = '<span style="color: red;">Please enter a valid number</span>';
-                return;
-            }
+  <div class="steps">
+    <div class="step">
+      <div class="snum">1</div>
+      <div>
+        <h4>Make a stationary object move</h4>
+        <p>A ball at rest starts moving when you kick it. A stalled car starts moving when pushed. Force brings rest to motion.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="snum">2</div>
+      <div>
+        <h4>Stop a moving object</h4>
+        <p>A goalkeeper catches a ball — the ball stops. Applying brakes stops a bicycle. Force brings motion to rest.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="snum">3</div>
+      <div>
+        <h4>Change the speed of a moving object</h4>
+        <p>Force in the direction of motion increases speed. Force opposite to motion decreases speed.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="snum">4</div>
+      <div>
+        <h4>Change the direction of motion</h4>
+        <p>A cricket bat hits a moving ball at an angle — the ball changes direction. Force acting at an angle to motion changes direction.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="snum">5</div>
+      <div>
+        <h4>Change the shape or size of an object</h4>
+        <p>Squeezing clay changes its shape. Stretching a rubber band changes its size. Crushing a tin can changes its shape.</p>
+      </div>
+    </div>
+  </div>
 
-            let result, fromScale, toScale;
-            if (scale === 'celsius') {
-                result = (temp * 9/5) + 32;
-                fromScale = '°C';
-                toScale = '°F';
-            } else {
-                result = (temp - 32) * 5/9;
-                fromScale = '°F';
-                toScale = '°C';
-            }
+  <div class="callout ca-violet"><strong>DAV exam note:</strong> The chapter groups effects into two: (1) change in state of motion, and (2) change in shape/size. Make sure you know examples for both groups.</div>
 
-            resultDiv.innerHTML = `<strong>${temp}${fromScale} = ${result.toFixed(2)}${toScale}</strong>`;
-        }
+  <div class="eg">
+    <div class="ei"><div class="et">Kicking a football</div><div class="ed">Rest to motion — Effect 1</div></div>
+    <div class="ei"><div class="et">Catching a ball</div><div class="ed">Motion to rest — Effect 2</div></div>
+    <div class="ei"><div class="et">Applying car brakes</div><div class="ed">Slowing down — Effect 3</div></div>
+    <div class="ei"><div class="et">Bat hits ball sideways</div><div class="ed">Direction change — Effect 4</div></div>
+    <div class="ei"><div class="et">Squeezing clay</div><div class="ed">Shape change — Effect 5</div></div>
+    <div class="ei"><div class="et">Stretching rubber band</div><div class="ed">Size change — Effect 5</div></div>
+  </div>
+</section>
 
-        function checkQuiz() {
-            const answers = [
-                document.querySelector('input[name="q1"]:checked'),
-                document.querySelector('input[name="q2"]:checked'),
-                document.querySelector('input[name="q3"]:checked'),
-                document.querySelector('input[name="q4"]:checked'),
-                document.querySelector('input[name="q5"]:checked')
-            ];
+<!-- ═══════════════════════════
+     BALANCED & UNBALANCED
+═══════════════════════════ -->
+<section id="balanced">
+  <div class="eyebrow">DAV Chapter 4 — Topic 3</div>
+  <h2 class="stitle">Balanced &amp; Unbalanced Forces</h2>
+  <p class="sintro">When multiple forces act on an object, their combined effect determines what happens. The key is the net (resultant) force.</p>
 
-            if (answers.some(ans => ans === null)) {
-                alert('Please answer all questions!');
-                return;
-            }
+  <div class="comp">
+    <div class="cp">
+      <h4 style="color:var(--teal)">Balanced Forces</h4>
+      <ul>
+        <li>Net force on the object = zero</li>
+        <li>Object does not accelerate</li>
+        <li>If at rest, stays at rest</li>
+        <li>If moving, continues at same speed</li>
+        <li>May change shape (but not motion)</li>
+        <li>Example: tug of war where neither side moves</li>
+        <li>Example: book lying on a table</li>
+      </ul>
+    </div>
+    <div class="cp">
+      <h4 style="color:var(--rose)">Unbalanced Forces</h4>
+      <ul>
+        <li>Net force on the object is not zero</li>
+        <li>Object accelerates in direction of net force</li>
+        <li>If at rest, starts to move</li>
+        <li>If moving, changes speed or direction</li>
+        <li>Example: one team wins tug of war</li>
+        <li>Example: a kicked football flying through air</li>
+        <li>Example: car accelerating on a road</li>
+      </ul>
+    </div>
+  </div>
 
-            const correctAnswers = ['36.9', 'radiation', '32', 'copper', 'expand'];
-            let score = 0;
+  <div class="callout"><strong>Key formula:</strong> Net Force = Force 1 + Force 2 (taking direction into account). Forces in opposite directions are subtracted. If net force = 0, forces are balanced.</div>
 
-            answers.forEach((ans, index) => {
-                if (ans.value === correctAnswers[index]) {
-                    score++;
-                }
-            });
+  <div class="eg">
+    <div class="ei"><div class="et">Book on table</div><div class="ed">Weight down = Normal force up. Balanced. Book stays still.</div></div>
+    <div class="ei"><div class="et">Tug of war</div><div class="ed">Equal pull both sides = balanced. Unequal = one side wins (unbalanced).</div></div>
+    <div class="ei"><div class="et">Floating boat</div><div class="ed">Weight down = buoyancy up. Balanced. Boat stays afloat.</div></div>
+    <div class="ei"><div class="et">Rocket launching</div><div class="ed">Thrust up &gt; weight down. Unbalanced. Rocket accelerates upward.</div></div>
+  </div>
+</section>
 
-            const resultDiv = document.getElementById('quizResult');
-            resultDiv.innerHTML = `
-                <h3>Quiz Results: ${score}/5 Correct</h3>
-                <p>You scored: <strong>${Math.round((score/5)*100)}%</strong></p>
-                <p>${score >= 4 ? 'Excellent! You have a strong understanding of heat and temperature.' : 
-                   score >= 3 ? 'Good job! You have a good understanding but review the concepts.' : 
-                   'Review the material to strengthen your understanding.'}</p>
-            `;
-            resultDiv.style.display = 'block';
-            resultDiv.className = score >= 4 ? 'result correct' : 'result incorrect';
-        }
-    </script>
+<!-- ═══════════════════════════
+     TYPES OF FORCES
+═══════════════════════════ -->
+<section id="types">
+  <div class="eyebrow">DAV Chapter 4 — Topic 4</div>
+  <h2 class="stitle">Types of Forces — Overview</h2>
+  <p class="sintro">Forces are broadly divided into two categories based on whether they require physical contact between objects.</p>
+
+  <table class="dt">
+    <thead><tr><th>Type</th><th>Contact needed?</th><th>Examples</th></tr></thead>
+    <tbody>
+      <tr><td>Muscular force</td><td><span class="tag tt">Contact</span></td><td>Lifting, pushing, cycling, writing</td></tr>
+      <tr><td>Friction</td><td><span class="tag tt">Contact</span></td><td>Walking, brakes, writing with a pen</td></tr>
+      <tr><td>Gravitational force</td><td><span class="tag tr">Non-contact</span></td><td>Objects falling, tides, planetary orbits</td></tr>
+      <tr><td>Magnetic force</td><td><span class="tag tr">Non-contact</span></td><td>Magnet attracting iron nails, compass needle</td></tr>
+      <tr><td>Electrostatic force</td><td><span class="tag tr">Non-contact</span></td><td>Comb attracting paper, lightning, synthetic clothes</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout ca-amber"><strong>DAV specific fill in the blank:</strong> The force responsible for raising body hair when removing a synthetic shirt in dry weather is an <b>electrostatic force</b>. Cricket bails falling when hit by the ball is also a <b>contact force</b>.</div>
+</section>
+
+<!-- ═══════════════════════════
+     CONTACT FORCES
+═══════════════════════════ -->
+<section id="contact">
+  <div class="eyebrow">DAV Chapter 4 — Topic 5</div>
+  <h2 class="stitle">Contact Forces</h2>
+  <p class="sintro">Contact forces require the two objects to physically touch each other. The most important contact forces in this chapter are muscular force and friction.</p>
+
+  <div class="cg">
+    <div class="gc"><div class="ca" style="background:var(--teal)"></div><h3>Muscular Force</h3><p>Force exerted by muscles in our body. All physical activities — lifting, throwing, pushing, cycling, writing — use muscular force.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--amber)"></div><h3>Friction</h3><p>A force that opposes relative motion between two surfaces in contact. Acts opposite to the direction of motion. It is both useful and harmful.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--blue)"></div><h3>Normal Force</h3><p>The perpendicular push from a surface on an object resting on it. A book on a table is pushed up by the normal force of the table.</p></div>
+  </div>
+
+  <div class="callout"><strong>Friction facts (DAV important):</strong> Friction depends on the nature of surfaces and the force pressing them together. Smooth surfaces have less friction. Rough surfaces have more friction.</div>
+
+  <div class="kp">
+    <div class="kp-row"><div class="kp-dot"></div><span><b>Useful friction:</b> Walking (feet grip floor), writing (pen grips paper), brakes stopping vehicles, holding objects.</span></div>
+    <div class="kp-row"><div class="kp-dot"></div><span><b>Harmful friction:</b> Wear and tear of machine parts, tyres wearing out, energy loss as heat.</span></div>
+    <div class="kp-row"><div class="kp-dot"></div><span><b>Reducing friction:</b> Lubricants (oil, grease), ball bearings, smooth polished surfaces, streamlining.</span></div>
+    <div class="kp-row"><div class="kp-dot"></div><span><b>Increasing friction:</b> Rough surfaces on tyres, treads on shoes, grooves on handles, sand on icy roads.</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     NON-CONTACT FORCES
+═══════════════════════════ -->
+<section id="noncontact">
+  <div class="eyebrow">DAV Chapter 4 — Topic 6</div>
+  <h2 class="stitle">Non-Contact Forces</h2>
+  <p class="sintro">Non-contact forces act between objects without any physical touch. They act through fields — gravitational, magnetic, and electric fields.</p>
+
+  <div class="cg">
+    <div class="gc"><div class="ca" style="background:var(--blue)"></div><h3>Gravitational Force</h3><p>Every object with mass attracts every other object. Earth pulls everything downward. The larger the mass, the greater the gravity.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--rose)"></div><h3>Magnetic Force</h3><p>Force between magnets or between a magnet and magnetic material (iron, nickel, cobalt). Like poles repel, unlike poles attract.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--violet)"></div><h3>Electrostatic Force</h3><p>Force between electrically charged objects. Like charges repel, unlike charges attract. Created by rubbing — comb attracting paper bits.</p></div>
+  </div>
+
+  <table class="dt">
+    <thead><tr><th>Force</th><th>Acts on</th><th>Real-life examples</th></tr></thead>
+    <tbody>
+      <tr><td>Gravitational</td><td>All objects with mass</td><td>Falling apple, ocean tides, Moon orbiting Earth</td></tr>
+      <tr><td>Magnetic</td><td>Magnetic materials</td><td>Compass needle, electromagnet in junkyard, fridge magnets</td></tr>
+      <tr><td>Electrostatic</td><td>Charged objects</td><td>Comb + paper bits, balloon on wall, synthetic shirt crackling</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout ca-rose"><strong>Gravitational force formula:</strong> F = G × m₁ × m₂ / d² — where G is gravitational constant, m₁ and m₂ are masses, and d is distance between them. (You will study this in detail in Class 9.)</div>
+</section>
+
+<!-- ═══════════════════════════
+     PRESSURE
+═══════════════════════════ -->
+<section id="pressure">
+  <div class="eyebrow">DAV Chapter 4 — Topic 7</div>
+  <h2 class="stitle">What is Pressure?</h2>
+  <p class="sintro">Pressure describes how a force is distributed over an area. The same force over a smaller area creates much more pressure.</p>
+
+  <div class="callout"><strong>Thrust vs Pressure:</strong> <b>Thrust</b> is the force applied perpendicular to a surface. <b>Pressure</b> is the thrust per unit area of that surface.</div>
+
+  <div class="frow">
+    <div class="fb" style="border-left-color:var(--amber)">
+      <div class="fexpr" style="color:var(--amber)">Pressure = Force / Area</div>
+      <div class="fparts">
+        <b>P</b> = Pressure (Pa or N/m²) &nbsp;|&nbsp;
+        <b>F</b> = Force / Thrust (N) &nbsp;|&nbsp;
+        <b>A</b> = Area (m²)<br/>
+        1 Pascal = 1 N/m²
+      </div>
+    </div>
+  </div>
+
+  <div class="callout ca-amber"><strong>Golden rule:</strong> Same force, smaller area = MORE pressure. Same force, larger area = LESS pressure. This is why a knife cuts easily and why snowshoes stop you from sinking.</div>
+
+  <div class="ibox">
+    <div class="ititle">Pressure Calculator</div>
+    <div class="srow">
+      <span class="slbl">Force / Thrust (N)</span>
+      <input type="range" min="1" max="500" value="100" id="force-p" oninput="calcPressure()"/>
+      <span class="sval" id="force-pv">100 N</span>
+    </div>
+    <div class="srow">
+      <span class="slbl">Area (cm²)</span>
+      <input type="range" min="1" max="200" value="50" id="area-p" oninput="calcPressure()"/>
+      <span class="sval" id="area-pv">50 cm²</span>
+    </div>
+    <div class="rpanel">
+      <div><div class="runit">Pressure</div><div class="rnum" style="color:var(--amber)" id="press-res">20,000 Pa</div></div>
+      <div class="rinsight" id="press-note">Moderate pressure — like standing on soft ground.</div>
+    </div>
+  </div>
+
+  <div class="eg">
+    <div class="ei"><div class="et">Sharp knife cuts easily</div><div class="ed">Tiny blade area = very high pressure at the edge.</div></div>
+    <div class="ei"><div class="et">Porter's cloth on head</div><div class="ed">Round cloth increases contact area, reducing pressure on the head.</div></div>
+    <div class="ei"><div class="et">Wide truck tyres</div><div class="ed">Rear double tyres increase area so truck doesn't sink into soft ground.</div></div>
+    <div class="ei"><div class="et">Railway sleepers</div><div class="ed">Tracks laid on wide wooden sleepers to spread weight over large area.</div></div>
+    <div class="ei"><div class="et">Snowshoes</div><div class="ed">Large area distributes body weight — you don't sink into snow.</div></div>
+    <div class="ei"><div class="et">High heels on sand</div><div class="ed">Very small area = enormous pressure — heels sink into soft sand.</div></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     LIQUID PRESSURE
+═══════════════════════════ -->
+<section id="liquid-pressure">
+  <div class="eyebrow">DAV Chapter 4 — Topic 8</div>
+  <h2 class="stitle">Liquid Pressure</h2>
+  <p class="sintro">Liquids exert pressure on all surfaces they are in contact with. The pressure increases with depth and with the density of the liquid.</p>
+
+  <div class="cg">
+    <div class="gc"><div class="ca" style="background:var(--blue)"></div><h3>Deeper = more pressure</h3><p>The weight of liquid above pushes down on everything below. More depth = more liquid above = greater pressure.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--teal)"></div><h3>Acts in all directions</h3><p>Unlike solids, liquids exert pressure equally upward, downward, and sideways. A hole at any point on a submerged container will leak.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--amber)"></div><h3>Denser liquid = more pressure</h3><p>Salt water exerts more pressure than fresh water at the same depth. Mercury exerts far more pressure than water.</p></div>
+  </div>
+
+  <div class="frow">
+    <div class="fb" style="border-left-color:var(--blue)">
+      <div class="fexpr" style="color:var(--blue)">P = ρ × g × h</div>
+      <div class="fparts">
+        <b>P</b> = liquid pressure (Pa) &nbsp;|&nbsp;
+        <b>ρ</b> = density of liquid (kg/m³)<br/>
+        <b>g</b> = 10 m/s² &nbsp;|&nbsp;
+        <b>h</b> = depth below surface (m)
+      </div>
+    </div>
+  </div>
+
+  <div class="ibox">
+    <div class="ititle">Liquid Pressure Calculator</div>
+    <div class="srow">
+      <span class="slbl">Depth (metres)</span>
+      <input type="range" min="1" max="200" value="10" id="depth" oninput="calcLiquid()"/>
+      <span class="sval" id="depth-v">10 m</span>
+    </div>
+    <div class="lbtns">
+      <button class="lbtn sel" onclick="setLiq(1000,this)">Fresh water</button>
+      <button class="lbtn" onclick="setLiq(1025,this)">Sea water</button>
+      <button class="lbtn" onclick="setLiq(800,this)">Oil</button>
+      <button class="lbtn" onclick="setLiq(13600,this)">Mercury</button>
+    </div>
+    <div class="rpanel">
+      <div><div class="runit">Liquid Pressure</div><div class="rnum" style="color:var(--blue)" id="liq-res">100,000 Pa</div></div>
+      <div class="rinsight" id="liq-note">About 1 atmosphere of pressure.</div>
+    </div>
+  </div>
+
+  <div class="kp">
+    <div class="kp-row"><div class="kp-dot"></div><span><b>Dams are thicker at the base</b> — water pressure is greatest at the bottom, so the wall must be strongest there.</span></div>
+    <div class="kp-row"><div class="kp-dot"></div><span><b>Water supply tanks</b> — placed at height so water flows with pressure to taps on lower floors.</span></div>
+    <div class="kp-row"><div class="kp-dot"></div><span><b>Deep sea creatures</b> — have special bodies adapted to withstand enormous water pressure at great depths.</span></div>
+    <div class="kp-row"><div class="kp-dot"></div><span><b>Submarines</b> — hull is engineered to resist the crushing water pressure when submerged.</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     ATMOSPHERIC PRESSURE
+═══════════════════════════ -->
+<section id="atm">
+  <div class="eyebrow">DAV Chapter 4 — Topic 9</div>
+  <h2 class="stitle">Atmospheric Pressure</h2>
+  <p class="sintro">The air around us has weight. This weight pushes on all surfaces — that is atmospheric pressure. It acts in all directions, just like liquid pressure.</p>
+
+  <div class="callout ca-blue"><strong>Definition:</strong> The pressure exerted by the atmosphere (air) on all objects on Earth's surface is called atmospheric pressure. At sea level: approximately <b>101,325 Pa = 1 atm</b>.</div>
+
+  <div class="cg">
+    <div class="gc"><div class="ca" style="background:var(--blue)"></div><h3>Decreases with altitude</h3><p>Higher up, there is less air above you. So atmospheric pressure is lower at mountain tops than at sea level. Ears pop in aeroplanes.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--teal)"></div><h3>Acts in all directions</h3><p>Air pushes from all sides equally. We don't feel it because the pressure inside our body balances it out perfectly.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--violet)"></div><h3>Measured by barometer</h3><p>A barometer measures atmospheric pressure. Mercury barometer: normal atmospheric pressure supports a column of mercury 76 cm tall.</p></div>
+  </div>
+
+  <div class="kp">
+    <div class="kp-row"><div class="kp-dot"></div><span><b>Drinking through a straw:</b> You reduce pressure inside the straw by sucking. Atmospheric pressure outside pushes the liquid up.</span></div>
+    <div class="kp-row"><div class="kp-dot"></div><span><b>Suction cups:</b> Pressing a suction cup removes air, creating low pressure. Atmospheric pressure outside holds the cup firmly to the surface.</span></div>
+    <div class="kp-row"><div class="kp-dot"></div><span><b>Tyres and footballs:</b> Pumped up with air at pressure greater than atmospheric. The air inside pushes outward, keeping the tyre firm.</span></div>
+    <div class="kp-row"><div class="kp-dot"></div><span><b>Weather changes:</b> Falling atmospheric pressure usually indicates rain or storms coming. Rising pressure means fair weather ahead.</span></div>
+  </div>
+
+  <div class="callout ca-amber"><strong>DAV exam favourite:</strong> Why doesn't the atmosphere crush us? Because the pressure inside our bodies equals the atmospheric pressure outside — they balance each other exactly.</div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     MECHANICS — CLASS 9 PREP
+══════════════════════════════════════════ -->
+
+<!-- SPEED & VELOCITY -->
+<section id="speed">
+  <div class="eyebrow">Mechanics — Class 9 Prep — Topic 1</div>
+  <h2 class="stitle">Speed &amp; Velocity</h2>
+  <p class="sintro">Speed is how fast something moves. Velocity is speed with direction. Understanding both builds the foundation for Newton's Laws.</p>
+
+  <div class="svgrid">
+    <div class="svp" style="border-color:rgba(94,240,200,.18)">
+      <h3 style="color:var(--teal)">Speed</h3>
+      <div class="sub">Magnitude only — scalar quantity</div>
+      <div class="svi"><span class="svi-n">Formula</span><span class="svi-e">Distance / Time</span></div>
+      <div class="svi"><span class="svi-n">Unit</span><span class="svi-e">m/s or km/h</span></div>
+      <div class="svi"><span class="svi-n">Direction needed</span><span class="svi-e">No</span></div>
+      <div class="svi"><span class="svi-n">After full circle</span><span class="svi-e">Not zero</span></div>
+      <div class="svi"><span class="svi-n">Example</span><span class="svi-e">Car at 60 km/h</span></div>
+    </div>
+    <div class="svp" style="border-color:rgba(96,184,242,.18)">
+      <h3 style="color:var(--blue)">Velocity</h3>
+      <div class="sub">Magnitude + direction — vector quantity</div>
+      <div class="svi"><span class="svi-n">Formula</span><span class="svi-e">Displacement / Time</span></div>
+      <div class="svi"><span class="svi-n">Unit</span><span class="svi-e">m/s with direction</span></div>
+      <div class="svi"><span class="svi-n">Direction needed</span><span class="svi-e">Yes</span></div>
+      <div class="svi"><span class="svi-n">After full circle</span><span class="svi-e">Zero!</span></div>
+      <div class="svi"><span class="svi-n">Example</span><span class="svi-e">60 km/h North</span></div>
+    </div>
+  </div>
+
+  <div class="frow">
+    <div class="fb" style="border-left-color:var(--teal)">
+      <div class="fexpr" style="color:var(--teal)">Speed = Distance / Time</div>
+      <div class="fparts">Scalar &nbsp;|&nbsp; Unit: m/s</div>
+    </div>
+    <div class="fb" style="border-left-color:var(--blue)">
+      <div class="fexpr" style="color:var(--blue)">Velocity = Displacement / Time</div>
+      <div class="fparts">Vector — direction must be stated &nbsp;|&nbsp; Unit: m/s</div>
+    </div>
+  </div>
+
+  <div class="ibox">
+    <div class="ititle">Speed Calculator</div>
+    <div class="srow">
+      <span class="slbl">Distance (metres)</span>
+      <input type="range" min="10" max="1000" value="100" id="dist" oninput="calcSpeed()"/>
+      <span class="sval" id="dist-v">100 m</span>
+    </div>
+    <div class="srow">
+      <span class="slbl">Time (seconds)</span>
+      <input type="range" min="1" max="120" value="20" id="time" oninput="calcSpeed()"/>
+      <span class="sval" id="time-v">20 s</span>
+    </div>
+    <div class="rpanel">
+      <div><div class="runit">Speed</div><div class="rnum" style="color:var(--teal)" id="speed-res">5.0 m/s</div></div>
+      <div class="rinsight" id="speed-note">Jogging pace.</div>
+    </div>
+  </div>
+
+  <div class="callout"><strong>Exam trick:</strong> An object that completes a full circle returns to its start — speed is not zero (it covered 400 m), but velocity is zero because displacement = 0.</div>
+</section>
+
+<!-- ACCELERATION -->
+<section id="acceleration">
+  <div class="eyebrow">Mechanics — Class 9 Prep — Topic 2</div>
+  <h2 class="stitle">Acceleration</h2>
+  <p class="sintro">Acceleration is the rate of change of velocity. Speeding up, slowing down, or changing direction — all involve acceleration.</p>
+
+  <div class="frow">
+    <div class="fb" style="border-left-color:var(--rose)">
+      <div class="fexpr" style="color:var(--rose)">a = (v − u) / t</div>
+      <div class="fparts"><b>a</b> = acceleration (m/s²) &nbsp;|&nbsp; <b>v</b> = final velocity &nbsp;|&nbsp; <b>u</b> = initial velocity &nbsp;|&nbsp; <b>t</b> = time (s)</div>
+    </div>
+    <div class="fb" style="border-left-color:var(--amber)">
+      <div class="fexpr" style="color:var(--amber)">F = m × a</div>
+      <div class="fparts">Newton's Second Law &nbsp;|&nbsp; <b>F</b> = force (N) &nbsp;|&nbsp; <b>m</b> = mass (kg)</div>
+    </div>
+  </div>
+
+  <div class="ibox">
+    <div class="ititle">Acceleration Calculator</div>
+    <div class="srow">
+      <span class="slbl">Initial velocity u (m/s)</span>
+      <input type="range" min="0" max="60" value="0" id="u-val" oninput="calcAcc()"/>
+      <span class="sval" id="u-show">0 m/s</span>
+    </div>
+    <div class="srow">
+      <span class="slbl">Final velocity v (m/s)</span>
+      <input type="range" min="0" max="60" value="20" id="v-val" oninput="calcAcc()"/>
+      <span class="sval" id="v-show">20 m/s</span>
+    </div>
+    <div class="srow">
+      <span class="slbl">Time t (seconds)</span>
+      <input type="range" min="1" max="40" value="5" id="t-val" oninput="calcAcc()"/>
+      <span class="sval" id="t-show">5 s</span>
+    </div>
+    <div class="rpanel">
+      <div><div class="runit">Acceleration</div><div class="rnum" style="color:var(--rose)" id="acc-res">4.00 m/s²</div></div>
+      <div class="rinsight" id="acc-note">Velocity increases by 4 m/s every second.</div>
+    </div>
+  </div>
+
+  <div class="eg">
+    <div class="ei"><div class="et">Car from rest</div><div class="ed">u=0, v=20, t=10s → a = 2 m/s²</div></div>
+    <div class="ei"><div class="et">Bus braking</div><div class="ed">u=30, v=0, t=15s → a = −2 m/s²</div></div>
+    <div class="ei"><div class="et">Aircraft takeoff</div><div class="ed">u=0, v=80, t=20s → a = 4 m/s²</div></div>
+    <div class="ei"><div class="et">Sprinter</div><div class="ed">u=2, v=10, t=4s → a = 2 m/s²</div></div>
+  </div>
+</section>
+
+<!-- SCALAR & VECTOR -->
+<section id="scalar">
+  <div class="eyebrow">Mechanics — Class 9 Prep — Topic 3</div>
+  <h2 class="stitle">Scalar &amp; Vector Quantities</h2>
+  <p class="sintro">Some quantities need only a number. Others need a number and a direction. This distinction is critical in physics.</p>
+
+  <div class="svgrid">
+    <div class="svp" style="border-color:rgba(242,202,96,.18)">
+      <h3 style="color:var(--amber)">Scalar — magnitude only</h3>
+      <div class="sub">No direction required</div>
+      <div class="svi"><span class="svi-n">Distance</span><span class="svi-e">100 m</span></div>
+      <div class="svi"><span class="svi-n">Speed</span><span class="svi-e">60 km/h</span></div>
+      <div class="svi"><span class="svi-n">Mass</span><span class="svi-e">10 kg</span></div>
+      <div class="svi"><span class="svi-n">Temperature</span><span class="svi-e">37 °C</span></div>
+      <div class="svi"><span class="svi-n">Time</span><span class="svi-e">5 s</span></div>
+      <div class="svi"><span class="svi-n">Energy</span><span class="svi-e">200 J</span></div>
+    </div>
+    <div class="svp" style="border-color:rgba(96,184,242,.18)">
+      <h3 style="color:var(--blue)">Vector — magnitude + direction</h3>
+      <div class="sub">Direction must be stated</div>
+      <div class="svi"><span class="svi-n">Displacement</span><span class="svi-e">100 m North</span></div>
+      <div class="svi"><span class="svi-n">Velocity</span><span class="svi-e">60 km/h East</span></div>
+      <div class="svi"><span class="svi-n">Force</span><span class="svi-e">20 N downward</span></div>
+      <div class="svi"><span class="svi-n">Acceleration</span><span class="svi-e">5 m/s² forward</span></div>
+      <div class="svi"><span class="svi-n">Weight</span><span class="svi-e">98 N downward</span></div>
+      <div class="svi"><span class="svi-n">Momentum</span><span class="svi-e">50 kg·m/s right</span></div>
+    </div>
+  </div>
+
+  <div class="callout"><strong>Quick test:</strong> Ask — does the direction change the physical meaning? Force of 20 N downward is completely different from 20 N upward. Temperature of 25°C has no meaningful direction. That tells you which is which.</div>
+</section>
+
+<!-- DENSITY -->
+<section id="density">
+  <div class="eyebrow">Mechanics — Class 9 Prep — Topic 4</div>
+  <h2 class="stitle">Density</h2>
+  <p class="sintro">Density tells you how much mass is packed into a given volume. It directly determines whether objects float or sink in a liquid.</p>
+
+  <div class="frow">
+    <div class="fb" style="border-left-color:var(--violet)">
+      <div class="fexpr" style="color:var(--violet)">ρ = m / V</div>
+      <div class="fparts">
+        <b>ρ (rho)</b> = density (kg/m³) &nbsp;|&nbsp; <b>m</b> = mass (kg) &nbsp;|&nbsp; <b>V</b> = volume (m³)<br/>
+        Rearranged: &nbsp; m = ρ × V &nbsp;&nbsp; V = m / ρ
+      </div>
+    </div>
+  </div>
+
+  <div class="callout ca-violet"><strong>Float or sink rule:</strong> If an object's density is less than water (1000 kg/m³) it floats. If greater, it sinks. Wood (700 kg/m³) floats. Iron (7874 kg/m³) sinks.</div>
+
+  <div class="ibox">
+    <div class="ititle">Density Calculator</div>
+    <div class="srow">
+      <span class="slbl">Mass (kg)</span>
+      <input type="range" min="1" max="200" value="50" id="mass-d" oninput="calcDensity()"/>
+      <span class="sval" id="mass-dv">50 kg</span>
+    </div>
+    <div class="srow">
+      <span class="slbl">Volume (m³ × 100)</span>
+      <input type="range" min="1" max="100" value="10" id="vol-d" oninput="calcDensity()"/>
+      <span class="sval" id="vol-dv">0.10 m³</span>
+    </div>
+    <div class="rpanel">
+      <div><div class="runit">Density</div><div class="rnum" style="color:var(--violet)" id="dens-res">500 kg/m³</div></div>
+      <div class="rinsight" id="dens-note">Less than water (1000 kg/m³) — floats.</div>
+    </div>
+  </div>
+
+  <div class="dbars" id="dbars"></div>
+  <p style="font-size:.77rem;color:var(--dim);text-align:center;margin-top:3px">Bar height = relative density. Wood is shorter than water — it floats.</p>
+</section>
+
+<!-- ═══════════════════════════
+     BRIDGE: CLASS 8 → CLASS 9
+═══════════════════════════ -->
+<section id="bridge">
+  <div class="eyebrow">Moving from Class 8 to Class 9</div>
+  <h2 class="stitle">You Already Know More Than You Think</h2>
+  <p class="sintro">Before jumping into Class 9 topics, let's see how everything you learned in Class 8 connects directly to what comes next. Class 9 does not start fresh — it picks up exactly where Class 8 left off.</p>
+
+  <div class="callout ca-amber">
+    <strong>The bridge idea:</strong> In Class 8 you learned that unbalanced forces cause objects to move or stop. Class 9 asks the next question — exactly <em>how much</em> do they move? That is where Newton's Laws come in.
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="snum">8</div>
+      <div>
+        <h4>Class 8 — Forces change motion</h4>
+        <p>You know that balanced forces = no change. Unbalanced forces = change in motion. That is the observation.</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="snum">9</div>
+      <div>
+        <h4>Class 9 — Why and how much?</h4>
+        <p>Newton gave three laws that explain exactly why objects behave the way they do, and give us formulas to calculate precise values.</p>
+      </div>
+    </div>
+  </div>
+
+  <table class="dt">
+    <thead><tr><th>Class 8 concept</th><th>Leads to Class 9 concept</th></tr></thead>
+    <tbody>
+      <tr><td>Balanced forces — object does not move</td><td>Newton's 1st Law — objects resist change (Inertia)</td></tr>
+      <tr><td>Unbalanced force — object accelerates</td><td>Newton's 2nd Law — F = m × a</td></tr>
+      <tr><td>You push a wall, wall pushes back</td><td>Newton's 3rd Law — every action has equal &amp; opposite reaction</td></tr>
+      <tr><td>Heavier objects harder to move</td><td>Inertia — mass is the measure of inertia</td></tr>
+      <tr><td>Force = mass × acceleration (introduced)</td><td>Momentum — p = m × v, and F = change in p / t</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ═══════════════════════════
+     INERTIA
+═══════════════════════════ -->
+<section id="inertia">
+  <div class="eyebrow">Class 9 — Topic 1</div>
+  <h2 class="stitle">Inertia — The Tendency to Resist Change</h2>
+  <p class="sintro">Before Newton's Laws, you need to understand one idea: objects are lazy. They do not like to change what they are doing. This laziness has a name — inertia.</p>
+
+  <div class="callout">
+    <strong>Simple definition:</strong> Inertia is the natural tendency of an object to resist any change in its state of rest or uniform motion. It is not a force — it is a property of matter.
+  </div>
+
+  <div class="cg">
+    <div class="gc"><div class="ca" style="background:var(--teal)"></div><h3>Inertia of rest</h3><p>A stationary object resists being set in motion. You have to push a heavy table to get it moving — it resists you. The heavier the table, the more it resists.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--blue)"></div><h3>Inertia of motion</h3><p>A moving object resists being stopped or slowed. A cricket ball bowled at 140 km/h carries enormous inertia — it is hard to stop it quickly.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--amber)"></div><h3>Inertia of direction</h3><p>A moving object resists changing direction. Passengers in a car lean sideways when the car takes a sharp turn — their bodies want to keep going straight.</p></div>
+  </div>
+
+  <div class="callout ca-violet">
+    <strong>Key fact:</strong> Inertia depends entirely on mass. Greater mass = greater inertia. A truck is harder to start moving and harder to stop than a bicycle — because the truck has far more mass.
+  </div>
+
+  <div class="eg">
+    <div class="ei"><div class="et">Dust off a carpet</div><div class="ed">Beat the carpet — carpet moves, dust stays behind (inertia of rest).</div></div>
+    <div class="ei"><div class="et">Bus brakes suddenly</div><div class="ed">You lurch forward — your body keeps moving while the bus stops (inertia of motion).</div></div>
+    <div class="ei"><div class="et">Coin on cardboard</div><div class="ed">Flick the cardboard — coin stays in place due to inertia of rest, falls into glass.</div></div>
+    <div class="ei"><div class="et">Car takes sharp turn</div><div class="ed">You lean outward — body resists direction change (inertia of direction).</div></div>
+    <div class="ei"><div class="et">Athlete runs past finish line</div><div class="ed">Cannot stop instantly — inertia of motion keeps them running forward.</div></div>
+    <div class="ei"><div class="et">Stone in a sling</div><div class="ed">Released — stone flies in a straight line due to inertia of direction.</div></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     NEWTON'S FIRST LAW
+═══════════════════════════ -->
+<section id="law1">
+  <div class="eyebrow">Class 9 — Topic 2</div>
+  <h2 class="stitle">Newton's First Law of Motion</h2>
+  <p class="sintro">Now that you understand inertia, Newton's First Law is simply a formal statement of it. This law is sometimes called the Law of Inertia.</p>
+
+  <div class="callout ca-blue">
+    <strong>Newton's First Law (write this in exams):</strong> An object remains in its state of rest, or of uniform motion in a straight line, unless it is acted upon by an external unbalanced force.
+  </div>
+
+  <div class="comp">
+    <div class="cp">
+      <h4 style="color:var(--teal)">What the law says</h4>
+      <ul>
+        <li>A stationary object stays still forever unless a force acts on it</li>
+        <li>A moving object keeps moving at the same speed in the same direction forever — unless a force acts on it</li>
+        <li>Only an unbalanced (net) force can cause a change</li>
+        <li>This is why space probes keep travelling without any engine once launched</li>
+      </ul>
+    </div>
+    <div class="cp">
+      <h4 style="color:var(--rose)">Common misconception</h4>
+      <ul>
+        <li>On Earth, moving objects do slow down and stop</li>
+        <li>But that is because friction and air resistance are acting on them</li>
+        <li>Remove all forces — the object would move forever</li>
+        <li>Newton's law describes what happens with zero net force, not just zero applied force</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="kp">
+    <div class="kp-row"><div class="kp-dot"></div><span><b>Galileo's contribution:</b> Newton built on Galileo's experiments showing that objects on frictionless surfaces keep moving indefinitely. Newton formalised this observation into a law.</span></div>
+    <div class="kp-row"><div class="kp-dot"></div><span><b>Uniform motion</b> means constant speed in a straight line — velocity does not change in magnitude or direction.</span></div>
+    <div class="kp-row"><div class="kp-dot"></div><span><b>Natural state of matter</b> is not rest — it is whatever it is already doing. Rest is just one possible state.</span></div>
+  </div>
+
+  <div class="callout ca-amber">
+    <strong>Connect to Class 8:</strong> Remember balanced forces from Class 8? When forces are balanced (net force = zero), Newton's First Law says nothing changes. That is exactly what you already knew — it just has a name now.
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     MOMENTUM
+═══════════════════════════ -->
+<section id="momentum">
+  <div class="eyebrow">Class 9 — Topic 3</div>
+  <h2 class="stitle">Momentum</h2>
+  <p class="sintro">Before Newton's Second Law, you need one more concept — momentum. It combines both mass and velocity into a single quantity that tells you how hard it is to stop something.</p>
+
+  <div class="callout">
+    <strong>Simple idea:</strong> A heavy truck moving slowly and a tennis ball moving very fast can both be hard to stop — just in different ways. Momentum captures both these situations in one number.
+  </div>
+
+  <div class="frow">
+    <div class="fb" style="border-left-color:var(--green)">
+      <div class="fexpr" style="color:var(--green)">p = m × v</div>
+      <div class="fparts">
+        <b>p</b> = momentum (kg·m/s) &nbsp;|&nbsp;
+        <b>m</b> = mass (kg) &nbsp;|&nbsp;
+        <b>v</b> = velocity (m/s)<br/>
+        Momentum is a <b>vector</b> — it has direction (same as velocity)
+      </div>
+    </div>
+  </div>
+
+  <div class="cg">
+    <div class="gc"><div class="ca" style="background:var(--green)"></div><h3>Large mass, low speed</h3><p>A truck of 5000 kg moving at 2 m/s has momentum = 10,000 kg·m/s. Hard to stop because of its mass.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--teal)"></div><h3>Small mass, high speed</h3><p>A bullet of 0.01 kg moving at 500 m/s has momentum = 5 kg·m/s. Dangerous because of its speed — concentrated in tiny area.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--amber)"></div><h3>Zero momentum</h3><p>An object at rest has zero momentum (v = 0). Momentum only exists when something is moving.</p></div>
+  </div>
+
+  <div class="ibox">
+    <div class="ititle">Momentum Calculator</div>
+    <div class="srow">
+      <span class="slbl">Mass (kg)</span>
+      <input type="range" min="1" max="5000" value="60" id="mom-m" oninput="calcMom()"/>
+      <span class="sval" id="mom-mv">60 kg</span>
+    </div>
+    <div class="srow">
+      <span class="slbl">Velocity (m/s)</span>
+      <input type="range" min="0" max="100" value="5" id="mom-v" oninput="calcMom()"/>
+      <span class="sval" id="mom-vv">5 m/s</span>
+    </div>
+    <div class="rpanel">
+      <div><div class="runit">Momentum</div><div class="rnum" style="color:var(--green)" id="mom-res">300 kg·m/s</div></div>
+      <div class="rinsight" id="mom-note">About the momentum of a person jogging.</div>
+    </div>
+  </div>
+
+  <div class="callout ca-violet">
+    <strong>Why does momentum matter?</strong> Newton's Second Law is actually defined in terms of momentum, not just F = ma. The real statement is: force equals the rate of change of momentum. F = ma is just a simplified version when mass does not change.
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     NEWTON'S SECOND LAW
+═══════════════════════════ -->
+<section id="law2">
+  <div class="eyebrow">Class 9 — Topic 4</div>
+  <h2 class="stitle">Newton's Second Law of Motion</h2>
+  <p class="sintro">The First Law told you that unbalanced force causes change. The Second Law tells you exactly how much change — it gives you the formula.</p>
+
+  <div class="callout ca-blue">
+    <strong>Newton's Second Law:</strong> The rate of change of momentum of an object is directly proportional to the applied unbalanced force, and takes place in the direction of the force.
+  </div>
+
+  <div class="frow">
+    <div class="fb" style="border-left-color:var(--rose)">
+      <div class="fexpr" style="color:var(--rose)">F = m × a</div>
+      <div class="fparts">
+        <b>F</b> = Force (N) &nbsp;|&nbsp; <b>m</b> = mass (kg) &nbsp;|&nbsp; <b>a</b> = acceleration (m/s²)<br/>
+        1 Newton = force that gives 1 kg an acceleration of 1 m/s²
+      </div>
+    </div>
+    <div class="fb" style="border-left-color:var(--green)">
+      <div class="fexpr" style="color:var(--green)">F = (mv − mu) / t</div>
+      <div class="fparts">
+        The full form — Force = change in momentum / time<br/>
+        <b>mv</b> = final momentum &nbsp;|&nbsp; <b>mu</b> = initial momentum
+      </div>
+    </div>
+  </div>
+
+  <div class="comp">
+    <div class="cp">
+      <h4 style="color:var(--rose)">Direct proportion to force</h4>
+      <ul>
+        <li>Double the force → double the acceleration</li>
+        <li>Triple the force → triple the acceleration</li>
+        <li>Same mass — more force always means more acceleration</li>
+        <li>Push a trolley gently vs push it hard</li>
+      </ul>
+    </div>
+    <div class="cp">
+      <h4 style="color:var(--amber)">Inverse proportion to mass</h4>
+      <ul>
+        <li>Double the mass → half the acceleration</li>
+        <li>Same force on a car vs a bicycle — bicycle accelerates far more</li>
+        <li>Heavy objects are harder to accelerate</li>
+        <li>This is exactly the inertia idea from Topic 1</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ibox">
+    <div class="ititle">F = ma Calculator — find any value</div>
+    <div class="srow">
+      <span class="slbl">Mass (kg)</span>
+      <input type="range" min="1" max="2000" value="10" id="fma-m" oninput="calcFma()"/>
+      <span class="sval" id="fma-mv">10 kg</span>
+    </div>
+    <div class="srow">
+      <span class="slbl">Acceleration (m/s²)</span>
+      <input type="range" min="0" max="50" value="5" id="fma-a" oninput="calcFma()"/>
+      <span class="sval" id="fma-av">5 m/s²</span>
+    </div>
+    <div class="rpanel">
+      <div><div class="runit">Force needed</div><div class="rnum" style="color:var(--rose)" id="fma-res">50 N</div></div>
+      <div class="rinsight" id="fma-note">About the force needed to accelerate a small box.</div>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step"><div class="snum">1</div><div><h4>Write down what is given</h4><p>Identify F, m, a — and which one you need to find. Always do this first.</p></div></div>
+    <div class="step"><div class="snum">2</div><div><h4>Rearrange F = ma for your unknown</h4><p>Finding a? Use a = F/m. Finding m? Use m = F/a. Finding F? Use F = m × a.</p></div></div>
+    <div class="step"><div class="snum">3</div><div><h4>If velocity and time are given, find acceleration first</h4><p>Use a = (v − u)/t first. Then substitute into F = ma. This is the most common exam question type.</p></div></div>
+  </div>
+
+  <div class="eg">
+    <div class="ei"><div class="et">Car braking (Class 9 style)</div><div class="ed">m=1200 kg, u=20 m/s, v=0, t=8s<br/>a = −2.5 m/s² → F = 3000 N</div></div>
+    <div class="ei"><div class="et">Rocket in space</div><div class="ed">m=500 kg, F=2500 N<br/>a = F/m = 5 m/s²</div></div>
+    <div class="ei"><div class="et">Cricket ball hit</div><div class="ed">m=0.15 kg, a=200 m/s²<br/>F = 30 N</div></div>
+    <div class="ei"><div class="et">Find mass</div><div class="ed">F=200 N, a=4 m/s²<br/>m = F/a = 50 kg</div></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     NEWTON'S THIRD LAW
+═══════════════════════════ -->
+<section id="law3">
+  <div class="eyebrow">Class 9 — Topic 5</div>
+  <h2 class="stitle">Newton's Third Law of Motion</h2>
+  <p class="sintro">The First Law was about rest and motion. The Second Law gave you the formula. Now the Third Law explains something that will surprise you — forces never come alone.</p>
+
+  <div class="callout ca-blue">
+    <strong>Newton's Third Law:</strong> To every action, there is an equal and opposite reaction. The two forces always act on different objects — never on the same object.
+  </div>
+
+  <div class="callout ca-rose">
+    <strong>The most important point:</strong> Action and reaction forces are equal in magnitude and opposite in direction — but they act on different objects. This is why they do NOT cancel each other out.
+  </div>
+
+  <div class="cg">
+    <div class="gc"><div class="ca" style="background:var(--teal)"></div><h3>Rocket propulsion</h3><p>Rocket pushes gases downward (action). Gases push rocket upward (reaction). The rocket moves up because the reaction acts on the rocket.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--blue)"></div><h3>Walking</h3><p>Your foot pushes the ground backward (action). Ground pushes your foot forward (reaction). You move forward because of the ground's reaction.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--amber)"></div><h3>Gun recoil</h3><p>Gun pushes bullet forward (action). Bullet pushes gun backward (reaction). The gun kicks backward — that is recoil.</p></div>
+    <div class="gc"><div class="ca" style="background:var(--violet)"></div><h3>Swimming</h3><p>You push water backward with your hands (action). Water pushes you forward (reaction). That is how you move through water.</p></div>
+  </div>
+
+  <table class="dt">
+    <thead><tr><th>Situation</th><th>Action</th><th>Reaction</th><th>Acts on</th></tr></thead>
+    <tbody>
+      <tr><td>Rocket</td><td>Rocket pushes gas down</td><td>Gas pushes rocket up</td><td>Different objects</td></tr>
+      <tr><td>Walking</td><td>Foot pushes ground back</td><td>Ground pushes foot forward</td><td>Different objects</td></tr>
+      <tr><td>Gun firing</td><td>Gun pushes bullet forward</td><td>Bullet pushes gun back</td><td>Different objects</td></tr>
+      <tr><td>Jumping off boat</td><td>You push boat back</td><td>Boat pushes you forward</td><td>Different objects</td></tr>
+      <tr><td>Inflated balloon released</td><td>Balloon pushes air out</td><td>Air pushes balloon forward</td><td>Different objects</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout ca-amber">
+    <strong>Classic exam question — "If action = reaction, why does anything move?"</strong> Because action and reaction act on different objects. When you push a wall, the wall pushes you back — you move backward, not the wall (because the wall is fixed to the ground which has enormous mass and inertia).
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     CONSERVATION OF MOMENTUM
+═══════════════════════════ -->
+<section id="conservation">
+  <div class="eyebrow">Class 9 — Topic 6</div>
+  <h2 class="stitle">Conservation of Momentum</h2>
+  <p class="sintro">This is the grand conclusion that follows from Newton's Third Law. It is one of the most powerful laws in all of physics — and it is simpler than it sounds.</p>
+
+  <div class="callout ca-teal">
+    <strong>Law of Conservation of Momentum:</strong> In the absence of an external unbalanced force, the total momentum of a system of objects remains constant (is conserved).
+  </div>
+
+  <p style="color:var(--muted);font-size:.9rem;margin-bottom:1.2rem;line-height:1.75">In plain words: whatever momentum two objects have before a collision, they have the same total momentum after the collision. One object may give momentum to the other, but none is created or destroyed.</p>
+
+  <div class="frow">
+    <div class="fb" style="border-left-color:var(--teal)">
+      <div class="fexpr" style="color:var(--teal)">m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂</div>
+      <div class="fparts">
+        <b>m₁, m₂</b> = masses of the two objects<br/>
+        <b>u₁, u₂</b> = initial velocities &nbsp;|&nbsp; <b>v₁, v₂</b> = final velocities<br/>
+        Total momentum before = Total momentum after
+      </div>
+    </div>
+  </div>
+
+  <div class="ibox">
+    <div class="ititle">Collision Calculator — Ball A hits stationary Ball B</div>
+    <div class="srow">
+      <span class="slbl">Mass A (kg)</span>
+      <input type="range" min="1" max="20" value="5" id="col-ma" oninput="calcCol()"/>
+      <span class="sval" id="col-mav">5 kg</span>
+    </div>
+    <div class="srow">
+      <span class="slbl">Mass B (kg)</span>
+      <input type="range" min="1" max="20" value="5" id="col-mb" oninput="calcCol()"/>
+      <span class="sval" id="col-mbv">5 kg</span>
+    </div>
+    <div class="srow">
+      <span class="slbl">Initial velocity A (m/s)</span>
+      <input type="range" min="1" max="20" value="10" id="col-ua" oninput="calcCol()"/>
+      <span class="sval" id="col-uav">10 m/s</span>
+    </div>
+    <div class="rpanel" style="flex-direction:column;align-items:flex-start;gap:.8rem">
+      <div style="display:flex;gap:2rem;flex-wrap:wrap">
+        <div><div class="runit">Total momentum before</div><div class="rnum" style="color:var(--teal);font-size:1.5rem" id="col-pbefore">50 kg·m/s</div></div>
+        <div><div class="runit">Total momentum after</div><div class="rnum" style="color:var(--teal);font-size:1.5rem" id="col-pafter">50 kg·m/s</div></div>
+      </div>
+      <div style="font-size:.83rem;color:var(--muted)" id="col-note">A stops, B moves at 10 m/s — equal masses exchange velocities completely.</div>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step"><div class="snum">1</div><div><h4>Calculate total momentum before</h4><p>p_before = m₁×u₁ + m₂×u₂. If Ball B is at rest, its term is zero.</p></div></div>
+    <div class="step"><div class="snum">2</div><div><h4>Set equal to total momentum after</h4><p>p_before = m₁×v₁ + m₂×v₂. This is the conservation equation.</p></div></div>
+    <div class="step"><div class="snum">3</div><div><h4>Solve for the unknown velocity</h4><p>You will be given one unknown — substitute the known values and solve.</p></div></div>
+  </div>
+
+  <div class="eg">
+    <div class="ei"><div class="et">Equal mass collision</div><div class="ed">Ball A (5 kg, 10 m/s) hits Ball B (5 kg, at rest).<br/>A stops, B moves at 10 m/s.</div></div>
+    <div class="ei"><div class="et">Unequal masses</div><div class="ed">Heavy ball hits lighter ball — lighter ball moves fast, heavy ball slows but continues.</div></div>
+    <div class="ei"><div class="et">Rocket in space</div><div class="ed">Before: rocket + gas, both at rest. After: gas goes one way, rocket goes the other. Total momentum = 0 still.</div></div>
+    <div class="ei"><div class="et">Gun firing</div><div class="ed">Before: gun + bullet at rest (p=0). After: bullet forward + gun backward. Total still = 0.</div></div>
+  </div>
+
+  <div class="callout">
+    <strong>Connect everything:</strong> Conservation of momentum follows directly from Newton's Third Law. Action force changes momentum of object A. Reaction force (equal, opposite) changes momentum of object B by exactly the same amount in the opposite direction. Total change = zero. Total momentum = constant.
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     COMPLETE SUMMARY
+═══════════════════════════ -->
+<section id="summary">
+  <div class="eyebrow">Full Revision</div>
+  <h2 class="stitle">Complete Summary — Class 8 to Class 9</h2>
+  <p class="sintro">Every formula and law in one place. Use this for quick revision before your exam.</p>
+
+  <table class="dt">
+    <thead><tr><th>Topic</th><th>Key formula / statement</th><th>Unit</th></tr></thead>
+    <tbody>
+      <tr><td>Pressure</td><td>P = F / A</td><td>Pascal (Pa) = N/m²</td></tr>
+      <tr><td>Liquid pressure</td><td>P = ρ × g × h</td><td>Pa</td></tr>
+      <tr><td>Speed</td><td>Speed = Distance / Time</td><td>m/s</td></tr>
+      <tr><td>Velocity</td><td>Velocity = Displacement / Time</td><td>m/s + direction</td></tr>
+      <tr><td>Acceleration</td><td>a = (v − u) / t</td><td>m/s²</td></tr>
+      <tr><td>Density</td><td>ρ = m / V</td><td>kg/m³</td></tr>
+      <tr><td>Momentum</td><td>p = m × v</td><td>kg·m/s</td></tr>
+      <tr><td>Newton's 2nd Law</td><td>F = m × a</td><td>Newton (N)</td></tr>
+      <tr><td>Conservation of momentum</td><td>m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂</td><td>kg·m/s</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout ca-amber">
+    <strong>The three laws in one sentence each:</strong><br/>
+    1st Law — Objects keep doing what they are doing unless a force acts. (Inertia)<br/>
+    2nd Law — The harder you push and the lighter the object, the more it accelerates. (F = ma)<br/>
+    3rd Law — Every push gets a push back, always on a different object. (Action-Reaction)
+  </div>
+</section>
+
+<!-- ═══════════════════════════
+     QUIZ
+═══════════════════════════ -->
+<section id="quiz">
+  <div class="eyebrow">Practice — All Topics</div>
+  <h2 class="stitle">Quiz</h2>
+  <p class="sintro">15 questions covering DAV Class 8 Chapter 4 and all Class 9 topics. Select an option to see the answer and explanation.</p>
+  <div id="quiz-container"></div>
+  <button class="rbtn" onclick="resetQuiz()" style="margin-top:4px">Reset quiz</button>
+</section>
+
+</main>
+</div><!-- shell -->
+
+<script>
+// SIDEBAR TOGGLE (mobile)
+function toggleNav(){
+  const s = document.getElementById('sidebar');
+  const o = document.getElementById('overlay');
+  const b = document.getElementById('menuBtn');
+  const open = s.classList.toggle('open');
+  s.classList.toggle('closed', !open);
+  o.classList.toggle('show', open);
+  b.textContent = open ? 'Close' : 'Menu';
+}
+
+// On desktop always show sidebar
+function handleResize(){
+  const s = document.getElementById('sidebar');
+  if(window.innerWidth > 820){
+    s.classList.remove('closed','open');
+    document.getElementById('overlay').classList.remove('show');
+  } else {
+    if(!s.classList.contains('open')) s.classList.add('closed');
+  }
+}
+window.addEventListener('resize', handleResize);
+handleResize();
+
+// PROGRESS
+window.addEventListener('scroll',()=>{
+  const h = document.documentElement;
+  document.getElementById('prog').style.width = (h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+});
+
+// ACTIVE NAV
+const secs = document.querySelectorAll('section[id]');
+const links = document.querySelectorAll('.nl');
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting)
+      links.forEach(l=>l.classList.toggle('active', l.getAttribute('href')==='#'+e.target.id));
+  });
+},{threshold:0.25});
+secs.forEach(s=>io.observe(s));
+
+// Close sidebar on nav link click (mobile)
+links.forEach(l=>l.addEventListener('click',()=>{
+  if(window.innerWidth<=820){
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('sidebar').classList.add('closed');
+    document.getElementById('overlay').classList.remove('show');
+    document.getElementById('menuBtn').textContent='Menu';
+  }
+}));
+
+// PRESSURE CALC
+function calcPressure(){
+  const f=+document.getElementById('force-p').value;
+  const a=+document.getElementById('area-p').value;
+  document.getElementById('force-pv').textContent=f+' N';
+  document.getElementById('area-pv').textContent=a+' cm²';
+  const aM=a/10000;
+  const p=Math.round(f/aM);
+  document.getElementById('press-res').textContent=p.toLocaleString()+' Pa';
+  document.getElementById('press-note').textContent=
+    p<5000?'Low pressure — like lying on a mattress.':
+    p<50000?'Moderate pressure — like standing on soft ground.':
+    p<500000?'High pressure — like a car tyre on road.':
+    'Very high pressure — like a sharp knife edge!';
+}
+
+// LIQUID CALC
+let liqD=1000;
+function setLiq(d,btn){
+  liqD=d;
+  document.querySelectorAll('.lbtn').forEach(b=>b.classList.remove('sel'));
+  btn.classList.add('sel');
+  calcLiquid();
+}
+function calcLiquid(){
+  const h=+document.getElementById('depth').value;
+  document.getElementById('depth-v').textContent=h+' m';
+  const P=liqD*10*h;
+  document.getElementById('liq-res').textContent=P.toLocaleString()+' Pa';
+  const atm=(P/101325).toFixed(2);
+  document.getElementById('liq-note').textContent=
+    P<20000?'Gentle pressure. Noticeable but manageable.':
+    P<200000?atm+' atmospheres. You would feel this pressure clearly.':
+    P<2000000?atm+' atmospheres. Diving equipment required.':
+    atm+' atmospheres. Only submersibles can operate here.';
+}
+
+// SPEED CALC
+function calcSpeed(){
+  const d=+document.getElementById('dist').value, t=+document.getElementById('time').value;
+  document.getElementById('dist-v').textContent=d+' m';
+  document.getElementById('time-v').textContent=t+' s';
+  const s=(d/t).toFixed(1);
+  document.getElementById('speed-res').textContent=s+' m/s';
+  const n=parseFloat(s);
+  document.getElementById('speed-note').textContent=
+    n<1?'Very slow.':n<2?'Slow walk.':n<4?'Normal walking pace.':
+    n<7?'Jogging pace.':n<12?'Running fast.':n<30?'Speed of a city car.':'Extremely fast.';
+}
+
+// ACCELERATION CALC
+function calcAcc(){
+  const u=+document.getElementById('u-val').value,
+        v=+document.getElementById('v-val').value,
+        t=+document.getElementById('t-val').value;
+  document.getElementById('u-show').textContent=u+' m/s';
+  document.getElementById('v-show').textContent=v+' m/s';
+  document.getElementById('t-show').textContent=t+' s';
+  const a=((v-u)/t).toFixed(2);
+  document.getElementById('acc-res').textContent=a+' m/s²';
+  const af=parseFloat(a);
+  document.getElementById('acc-note').textContent=
+    af>0?'Velocity increases by '+Math.abs(a)+' m/s every second. Speeding up.':
+    af<0?'Velocity decreases by '+Math.abs(a)+' m/s every second. Deceleration.':
+    'No change in velocity. Constant speed.';
+}
+
+// DENSITY CALC
+function calcDensity(){
+  const m=+document.getElementById('mass-d').value,
+        v=+document.getElementById('vol-d').value/100;
+  document.getElementById('mass-dv').textContent=m+' kg';
+  document.getElementById('vol-dv').textContent=v.toFixed(2)+' m³';
+  const d=Math.round(m/v);
+  document.getElementById('dens-res').textContent=d.toLocaleString()+' kg/m³';
+  document.getElementById('dens-note').textContent=
+    d<1000?'Less than water (1000 kg/m³) — this object floats.':
+    d===1000?'Same as water — neutrally buoyant.':
+    'Denser than water (1000 kg/m³) — this object sinks.';
+}
+
+// DENSITY BARS
+(function(){
+  const items=[
+    {n:'Air',v:1.2,c:'#60b8f2'},{n:'Wood',v:700,c:'#5ef0c8'},
+    {n:'Water',v:1000,c:'#60b8f2'},{n:'Concrete',v:2400,c:'#8890a8'},
+    {n:'Iron',v:7874,c:'#f26088'},{n:'Lead',v:11340,c:'#a78bfa'},
+    {n:'Gold',v:19300,c:'#f2ca60'}
+  ];
+  const mx=19300,mxH=120;
+  document.getElementById('dbars').innerHTML=items.map(it=>{
+    const h=Math.max(8,Math.round(it.v/mx*mxH));
+    return `<div class="dbw"><div class="db" style="height:${h}px;background:${it.c}1a;border-color:${it.c}"></div><div class="dbl">${it.n}</div><div class="dbv" style="color:${it.c}">${it.v<10?it.v.toFixed(1):it.v.toLocaleString()}</div></div>`;
+  }).join('');
+})();
+
+// MOMENTUM CALC
+function calcMom(){
+  const m=+document.getElementById('mom-m').value;
+  const v=+document.getElementById('mom-v').value;
+  document.getElementById('mom-mv').textContent=m+' kg';
+  document.getElementById('mom-vv').textContent=v+' m/s';
+  const p=m*v;
+  document.getElementById('mom-res').textContent=p.toLocaleString()+' kg·m/s';
+  document.getElementById('mom-note').textContent=
+    p===0?'Object at rest — zero momentum.':
+    p<100?'Low momentum — easy to stop.':
+    p<1000?'Moderate momentum — like a person running.':
+    p<10000?'High momentum — like a car at city speed.':
+    'Very high momentum — like a truck or train.';
+}
+
+// F=ma CALC
+function calcFma(){
+  const m=+document.getElementById('fma-m').value;
+  const a=+document.getElementById('fma-a').value;
+  document.getElementById('fma-mv').textContent=m+' kg';
+  document.getElementById('fma-av').textContent=a+' m/s²';
+  const f=m*a;
+  document.getElementById('fma-res').textContent=f.toLocaleString()+' N';
+  document.getElementById('fma-note').textContent=
+    f<10?'Very small force.':
+    f<100?'Like pushing a light box.':
+    f<1000?'Like braking a bicycle hard.':
+    f<10000?'Like braking a car.':
+    'Enormous force — like a rocket engine or heavy vehicle braking.';
+}
+
+// COLLISION CALC
+function calcCol(){
+  const ma=+document.getElementById('col-ma').value;
+  const mb=+document.getElementById('col-mb').value;
+  const ua=+document.getElementById('col-ua').value;
+  document.getElementById('col-mav').textContent=ma+' kg';
+  document.getElementById('col-mbv').textContent=mb+' kg';
+  document.getElementById('col-uav').textContent=ua+' m/s';
+  const pBefore=ma*ua;
+  // elastic collision, B initially at rest
+  const va2=((ma-mb)/(ma+mb)*ua).toFixed(2);
+  const vb2=(2*ma/(ma+mb)*ua).toFixed(2);
+  const pAfter=(ma*parseFloat(va2)+mb*parseFloat(vb2)).toFixed(1);
+  document.getElementById('col-pbefore').textContent=pBefore+' kg·m/s';
+  document.getElementById('col-pafter').textContent=pAfter+' kg·m/s';
+  const vaF=parseFloat(va2);
+  document.getElementById('col-note').textContent=
+    vaF===0?`A stops completely. B moves at ${vb2} m/s. Equal masses exchange velocity fully.`:
+    vaF>0?`A slows to ${va2} m/s. B moves at ${vb2} m/s. A is heavier — it continues forward.`:
+    `A bounces back at ${Math.abs(va2)} m/s. B moves at ${vb2} m/s. B is heavier — A rebounds.`;
+}
+
+// QUIZ DATA
+const Qs=[
+  {q:"According to the DAV definition, force is an external agent that changes the state of ___ or the ___ of an object.",
+   opts:["color, texture","rest/motion, shape/size","temperature, weight","position, color"],ans:1,
+   exp:"Force can change the state of rest or motion AND the shape or size of an object — both are listed as effects in DAV Class 8."},
+  {q:"A book lies still on a table. The forces on it are:",
+   opts:["Unbalanced — gravity only","Balanced — gravity down equals normal force up","No forces acting","Only muscular force"],ans:1,
+   exp:"Gravity pulls the book down. The table's normal reaction pushes it up equally. Net force = 0. Balanced forces."},
+  {q:"Which of these is a NON-CONTACT force?",
+   opts:["Muscular force","Friction","Gravitational force","Normal force"],ans:2,
+   exp:"Gravitational force acts through a gravitational field — no physical contact between objects is needed."},
+  {q:"A porter places a round cloth on their head to carry a heavy load. This is because:",
+   opts:["It looks better","It increases area, reducing pressure on the head","It decreases area, increasing pressure","It has nothing to do with pressure"],ans:1,
+   exp:"P = F/A. More area means less pressure for the same force. The cloth spreads the load over a larger area."},
+  {q:"Why are dams built thicker at the base?",
+   opts:["It looks more stable","Water pressure is greatest at the bottom due to greater depth","The base holds more water","To reduce the weight of water"],ans:1,
+   exp:"P = ρgh. Pressure increases with depth. At the base, depth is maximum — the wall must be strongest there."},
+  {q:"What is inertia?",
+   opts:["The force that moves an object","The natural tendency of an object to resist change in its state","The speed of an object","The weight of an object"],ans:1,
+   exp:"Inertia is the property of matter by which an object resists any change in its state of rest or uniform motion. It is NOT a force — it is a tendency."},
+  {q:"A bus brakes suddenly. The passengers lurch forward. This is an example of:",
+   opts:["Inertia of rest","Inertia of direction","Inertia of motion","Newton's Third Law"],ans:2,
+   exp:"The passengers were moving forward with the bus. When the bus stops, their bodies continue moving forward due to inertia of motion."},
+  {q:"Newton's First Law is also called the:",
+   opts:["Law of Momentum","Law of Inertia","Law of Action-Reaction","Law of Acceleration"],ans:1,
+   exp:"Newton's First Law states that objects resist change in their state — this tendency is inertia. So it is called the Law of Inertia."},
+  {q:"A car of mass 1200 kg accelerates from 0 to 20 m/s in 10 seconds. What force is applied?",
+   opts:["120 N","2400 N","24000 N","240 N"],ans:1,
+   exp:"First: a = (v−u)/t = (20−0)/10 = 2 m/s². Then: F = m×a = 1200×2 = 2400 N."},
+  {q:"A force of 60 N acts on an object and gives it an acceleration of 3 m/s². What is the object's mass?",
+   opts:["180 kg","20 kg","63 kg","57 kg"],ans:1,
+   exp:"From F = ma: m = F/a = 60/3 = 20 kg."},
+  {q:"Newton's Third Law says action and reaction are equal and opposite. Why don't they cancel out?",
+   opts:["They are not exactly equal","They act on different objects","They act at different times","They have different units"],ans:1,
+   exp:"Action and reaction always act on DIFFERENT objects. Forces cancel only when they act on the SAME object. Since they act on different objects, each force changes the motion of its own object."},
+  {q:"A gun fires a bullet. The gun recoils (moves backward). This is an example of:",
+   opts:["Newton's First Law","Newton's Second Law","Newton's Third Law","Law of Inertia"],ans:2,
+   exp:"The gun exerts a forward force on the bullet (action). The bullet exerts an equal backward force on the gun (reaction). This is Newton's Third Law."},
+  {q:"A ball of mass 2 kg moving at 5 m/s collides with a stationary ball of mass 2 kg. After collision, ball A stops. What is the velocity of ball B?",
+   opts:["0 m/s","2.5 m/s","5 m/s","10 m/s"],ans:2,
+   exp:"Conservation of momentum: (2×5)+(2×0) = (2×0)+(2×vB). So 10 = 2vB. vB = 5 m/s. Equal masses exchange velocities completely."},
+  {q:"Which quantity is conserved in a collision when no external force acts?",
+   opts:["Speed","Kinetic energy","Momentum","Acceleration"],ans:2,
+   exp:"The Law of Conservation of Momentum states that total momentum of a system is conserved when no external unbalanced force acts. Kinetic energy is conserved only in perfectly elastic collisions."},
+  {q:"A rocket works in space (vacuum) because:",
+   opts:["Air pushes the rocket forward","The rocket pushes exhaust gases backward, and gases push the rocket forward (Newton's 3rd Law)","Gravity pulls the rocket forward","The rocket uses magnetic force"],ans:1,
+   exp:"Newton's Third Law — rocket ejects gases backward (action), gases push rocket forward (reaction). This works even in vacuum because it requires no medium to push against."},
+];
+
+let answered=new Array(Qs.length).fill(false);
+function buildQuiz(){
+  document.getElementById('quiz-container').innerHTML=Qs.map((q,i)=>`
+    <div class="qcard">
+      <div class="qnum">Question ${i+1} of ${Qs.length}</div>
+      <div class="qq">${q.q}</div>
+      <div class="qopts" id="opts-${i}">${q.opts.map((o,j)=>`<button class="qopt" onclick="ans(${i},${j})">${String.fromCharCode(65+j)}.&nbsp;&nbsp;${o}</button>`).join('')}</div>
+      <div class="qfb" id="fb-${i}"></div>
+    </div>`).join('');
+}
+function ans(qi,oi){
+  if(answered[qi])return;
+  answered[qi]=true;
+  const q=Qs[qi];
+  document.querySelectorAll(`#opts-${qi} button`).forEach((b,i)=>{
+    b.disabled=true;
+    if(i===q.ans)b.classList.add('correct');
+    else if(i===oi)b.classList.add('wrong');
+  });
+  const fb=document.getElementById(`fb-${qi}`);
+  fb.textContent=(oi===q.ans?'Correct. ':'Incorrect. ')+q.exp;
+  fb.style.color=oi===q.ans?'var(--teal)':'var(--rose)';
+}
+function resetQuiz(){answered=new Array(Qs.length).fill(false);buildQuiz();}
+buildQuiz();
+</script>
 </body>
 </html>
